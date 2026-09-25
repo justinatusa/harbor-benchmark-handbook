@@ -9,7 +9,7 @@
 3. [Layer1 总表](docs/layer1.md)
 4. [Registry](docs/registry.md)
 5. [转化路径](docs/conversion-playbook.md)
-6. 按需打开 [介绍卡](docs/layer2/)、[冲突](docs/conflicts.md)、[来源](docs/sources.md)、[Done-when 勾选](docs/done-when.md)
+6. 按需打开 [介绍卡](docs/layer2/)、[冲突](docs/conflicts.md)、[来源](docs/sources.md)
 
 ## 手册写什么
 
@@ -22,4 +22,4 @@
 - [MANIFEST.txt](MANIFEST.txt) — 本镜像文件清单
 - [待接入 Benchmark 名单](prompts/bench-list.md)
 
-不含私有调研笔记与合同全文。
+不含私有调研笔记与合同全文。Done-when / 是否对齐合同第 7 节的勾选不进读者正文；镜像里另有 `docs/done-when.md`，仅作过程勾选，不列入阅读顺序。

@@ -1,20 +1,25 @@
-# Harbor 0.23.0 薄抽象与转化手册（公开镜像）
+# Harbor 0.23.0 薄抽象与转化手册
 
-来源 Origin tip：`1976a2fdacc358ffaa207184fbca9409e78a638b`（justin-2/benchmarkresearchanddesign）。
+本仓库是 Harbor 0.23.0 钉选版薄抽象与转化手册的公开镜像。正文钉在 Origin tip `1976a2fdacc358ffaa207184fbca9409e78a638b`（`justin-2/benchmarkresearchanddesign`）。
 
-## 怎么读
+## 阅读顺序
 
-先 `docs/abstraction.md` / `docs/layer0.md`，再 `docs/layer1.md`，再 `docs/registry.md`，再 `docs/conversion-playbook.md`，最后按需翻 `docs/layer2/` 介绍卡。
+1. [组件抽象](docs/abstraction.md)
+2. [导读](docs/layer0.md)
+3. [Layer1 总表](docs/layer1.md)
+4. [Registry](docs/registry.md)
+5. [转化路径](docs/conversion-playbook.md)
+6. 按需打开 [介绍卡](docs/layer2/)、[冲突](docs/conflicts.md)、[来源](docs/sources.md)、[Done-when 勾选](docs/done-when.md)
 
-## 这份手册能做什么、不能做什么
+## 手册写什么
 
-- **能**：通读后做接入判断——三层轴与混类例子、轻适配/重改造怎么打勾、何处该停、哪些距离是 `unknown`。
-- **不能**：当成端到端可照做的转化操作手册。`conversion-playbook` 里多条检查项已写明「本仓缺 …，停在这里、勿假装可照做」。
-- **覆盖诚实**：例子大约盖住 8 个 slug，其余约 44 个不在那份例子清单里；52 题没有全部抽象完。出现在例子名单里 ≠ 距离档已核实可接。
-- **浏览**：暂不写入依赖列；缺的是「浏览属于哪一层」的仓内句。勿自行升成新轴。
-- **`programbench`**：距离是 `unknown`（原标轻适配但缺 `task.toml`，与仓内 08 规则冲突，勿当能接）。
-- **不是收工证明**：本仓不是 Harbor 全项目 Done-when 全勾的证明，也不宣称 §7 已齐。
+本手册给出三层轴与混类例子、轻适配与重改造的判定句、转化路径上的停句，以及各 benchmark 介绍卡。接入判断以 [Registry](docs/registry.md) 与 [组件抽象](docs/abstraction.md) 为准。
+
+[转化路径](docs/conversion-playbook.md) 对缺材料的条目直接停句，不补写仓库里还没有的步骤。例子清单大约覆盖 8 个 slug，其余约 44 个不在该清单；出现在例子名单不等于距离档已核实。浏览暂不写入依赖列。[programbench](docs/layer2/programbench.md) 的距离记为 `unknown`。
 
 ## 文件
 
-见 `MANIFEST.txt`。不含私有调研笔记与合同全文。
+- [MANIFEST.txt](MANIFEST.txt) — 本镜像文件清单
+- [待接入 Benchmark 名单](prompts/bench-list.md)
+
+不含私有调研笔记与合同全文。

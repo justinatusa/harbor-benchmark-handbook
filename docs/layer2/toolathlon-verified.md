@@ -6,7 +6,7 @@
 
 2. 官方源。仓库 https://github.com/hkust-nlp/Toolathlon ，commit `9be8d8fe07a497b18ee61e3f2ae694e9797f39eb`（2026-08-06，说明 “Remove outdated contact email”）。该仓 `pushed_at` 晚于这个 commit，清单只钉 main 的这个 SHA。论文 https://arxiv.org/abs/2510.25726 。站 https://toolathlon.xyz/ 。Hugging Face `hkust-nlp/Toolathlon`，修订 `b5092f978818c6c757a26cc027b3a0e5849392cd`。`tasks/finalpool` 在该 commit 有 108 个任务目录。
 
-3. 形态。`task`、`environment`、`verifier`、`agent`、`dataset`。清单没写 Harbor 的 `adapter`。
+3. 形态。`task`、`environment`、`verifier`、`agent`、`dataset`。公开材料没有 Harbor adapter。
 
 4. 与 Harbor 距离。重改造。清单没有给出 `task.toml` 或 `dataset.toml`。每题任务容器之外，`global_preparation/deploy_containers.sh` 还部署本地应用。这是多容器。
 
@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。压力在 `environment`。任务容器之外还要一组本地应用容器。`verifier` 是每题一份脚本，108 份没读完。`agent` 回路在本仓的 openai-agents 脚手架里。
 
-10. MANIFEST 路径。`notes/sources/toolathlon-verified/MANIFEST.md`
+10. 本地摘录。私有摘录未随公开手册发布。

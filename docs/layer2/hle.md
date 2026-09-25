@@ -6,7 +6,7 @@ GitHub 仓放评测脚本。题目在 Hugging Face `cais/hle`，要先同意门�
 
 2. 官方源。代码 https://github.com/centerforaisafety/hle ，`main` HEAD `22ed3074b1e7b134bcbc09028d0ba320839b0655`（2026-09-23）。数据集 https://huggingface.co/datasets/cais/hle ，修订 `5a81a4c7271a2a2a312b9a690f0c2fde837e4c29`，`gated: auto`。论文 https://arxiv.org/abs/2501.14249 。
 
-3. 形态。`dataset`、`verifier`。简单评测是单轮补全。带工具的说明才点名外部 `agent`。清单没写 `adapter`。
+3. 形态。`dataset`、`verifier`。简单评测是单轮补全。带工具的说明才点名外部 `agent`。公开材料没有 Harbor adapter。
 
 4. 与 Harbor 距离。暂不宜接。题目 gated，不能放进可再分发的 task 目录。评分要 judge 模型。清单没有给出 `task.toml` 或 `dataset.toml`。
 
@@ -20,4 +20,4 @@ GitHub 仓放评测脚本。题目在 Hugging Face `cais/hle`，要先同意门�
 
 9. 对抽象的压力。`verifier` 由另一个模型判断对错，数值题还允许误差。`dataset` 带图像，而且不能公开再分发。带工具时 `agent` 在外部命令行里。
 
-10. MANIFEST 路径。`notes/sources/hle/MANIFEST.md`
+10. 本地摘录。私有摘录未随公开手册发布。

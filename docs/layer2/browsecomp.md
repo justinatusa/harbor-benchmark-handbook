@@ -6,7 +6,7 @@
 
 2. 官方源。代码 https://github.com/openai/simple-evals ，`main` 的 commit `652c89d0ca9df547706735883097e9537d40dc47`（2026-04-22）。入口 https://openai.com/index/browsecomp 。论文 https://arxiv.org/abs/2504.12516 。题目不在 Hugging Face，在公开表格 `browse_comp_test_set.csv`。
 
-3. 形态。`dataset`、`verifier`。该 commit 的文件树没有 `environment` 定义，也没有 `agent` 循环。清单没写 `adapter`。
+3. 形态。`dataset`、`verifier`。该 commit 的文件树没有 `environment` 定义，也没有 `agent` 循环。公开材料没有 Harbor adapter。
 
 4. 与 Harbor 距离。重改造。评分要另调 judge 模型。清单没有给出 `task.toml` 或 `dataset.toml`。
 
@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。`verifier` 的 reward 来自另一个模型的 yes/no。`agent` 的浏览回路没有落在这个仓库里。`dataset` 是加密表格，单元格明文未随材料落盘。
 
-10. MANIFEST 路径。`notes/sources/browsecomp/MANIFEST.md`
+10. 本地摘录。私有摘录未随公开手册发布。

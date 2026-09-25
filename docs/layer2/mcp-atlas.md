@@ -6,7 +6,7 @@
 
 2. 官方源。https://github.com/scaleapi/mcp-atlas ，`main` HEAD `f24ba3fb0bfa484c86acb28431fad6d7282455f9`（2026-08-03）。论文 https://arxiv.org/abs/2602.00933 。数据集 https://huggingface.co/datasets/ScaleAI/MCP-Atlas ，修订 `8c563b55d7c967755f474299848049834d624617`。
 
-3. 形态。`dataset`、`environment`、`verifier`、`agent`。清单没写 `adapter`。
+3. 形态。`dataset`、`environment`、`verifier`、`agent`。公开材料没有 Harbor adapter。
 
 4. 与 Harbor 距离。重改造。评分要 judge 模型。清单没有给出 `task.toml` 或 `dataset.toml`。默认一个沙箱镜像。再起多个沙箱只是可选扩容。
 
@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。`environment` 要求同一任务的工具调用固定在同一个沙箱，`agent` 循环在宿主机进程里。`verifier` 由另一个模型给 claim 打覆盖率，有两档通过率。
 
-10. MANIFEST 路径。`notes/sources/mcp-atlas/MANIFEST.md`
+10. 本地摘录。私有摘录未随公开手册发布。

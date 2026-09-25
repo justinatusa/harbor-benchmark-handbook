@@ -6,7 +6,7 @@
 
 2. 官方源。https://github.com/RUCKBReasoning/SpreadsheetBench ，`main` commit `49b73a94775fb489063f60ca1865e3a650079a79`（2026-03-12）。没有 tag。论文 https://arxiv.org/abs/2406.14991 。数据集 https://huggingface.co/datasets/KAKA22/SpreadsheetBench ，修订 `ab0b742b0fc95b946f212d80ac7771b5531272e4`。
 
-3. 形态。`dataset`、`environment`、`verifier`、`agent`。清单没写 `adapter`。
+3. 形态。`dataset`、`environment`、`verifier`、`agent`。公开材料没有 Harbor adapter。
 
 4. 与 Harbor 距离。重改造。代码执行路径是两个镜像。清单没有给出 `task.toml` 或 `dataset.toml`。
 
@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。`environment` 把代码执行放在两个镜像里，公式重算放在宿主机的 LibreOffice。`verifier` 的规则是单元格相等，但该 commit 里写入比较的路径指向输入表。
 
-10. MANIFEST 路径。`notes/sources/spreadsheetbench/MANIFEST.md`
+10. 本地摘录。私有摘录未随公开手册发布。

@@ -6,7 +6,7 @@
 
 2. 官方源。仓库 https://github.com/RUCKBReasoning/SpreadsheetBench-2 ，commit `5c160265aa93c15b38e4034cbf1e09ab498335d9`（2026-08-22，说明 “docs: add dataset recalculation reminder”）。论文 https://arxiv.org/abs/2606.29955 。数据集 https://huggingface.co/datasets/KAKA22/SpreadsheetBench-v2 ，修订 `5a2215ed4121945ab09d8723df2995602090b042`。题面不在该 commit 的 git 树里，README 要求放到 `data/`。
 
-3. 形态。`task`、`environment`、`verifier`、`agent`、`dataset`。清单没写 Harbor 的 `adapter`。
+3. 形态。`task`、`environment`、`verifier`、`agent`、`dataset`。公开材料没有 Harbor adapter。
 
 4. 与 Harbor 距离。重改造。可视化脚本默认模型是 `glm-4.6v`。README 写这一步要在 Windows 上通过 Excel 或 WPS 把图导出来。清单没有给出 `task.toml` 或 `dataset.toml`。
 
@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。`verifier` 要同时容纳单元格的程序比较，和可视化的模型打分。`environment` 在可视化导出这一步要离开 Linux 容器，改到 Windows 上的 Excel 或 WPS。`agent` 是仓内 SWE-agent 的单工具循环。
 
-10. MANIFEST 路径。`notes/sources/spreadsheetbench-2/MANIFEST.md`
+10. 本地摘录。私有摘录未随公开手册发布。

@@ -16,7 +16,7 @@ task、environment、verifier、agent、dataset。项目页仓 `test_files/` 有
 
 ## 与 Harbor 距离
 
-unknown。104 道题在公开仓。分数按上游 pytest 通过率计算，评分不调用 judge 模型。论文写每题一个 Docker 环境。材料没写图形处理器（GPU），也没写图形桌面。没有 `task.toml` 或 `dataset.toml`。缺一句评测不要 GPU，且 openhands 与 runtime 两个镜像是不是多容器。证据不够放进其余四档。
+重改造。104 道题在公开仓。分数按上游 pytest 通过率计算，评分不调用 judge 模型。没有 Harbor `task.toml`。`openhands` 镜像是代理进程，runtime 镜像是它拉起的一个沙箱，不是 compose 多容器。GPU 开关在注释里，评测脚本没有写明必须显卡。
 
 ## 环境
 
@@ -36,8 +36,8 @@ unknown。104 道题在公开仓。分数按上游 pytest 通过率计算，评�
 
 ## 对抽象的压力
 
-缺一句评测不要 GPU，且 openhands 与 runtime 两个镜像是不是多容器。压在 verifier 和 environment。verifier 要先换回上游测试再跑 pytest，分数是通过率。environment 是每题一个镜像，装依赖时要出网。当前 agent 绑在 OpenHands 上。
+压在 verifier 和 environment。verifier 要先换回上游测试再跑 pytest，分数是通过率。environment 是每题一个执行镜像。`openhands` 与 runtime 是代理和它的一个沙箱，不是 compose 多服务。当前 agent 绑在 OpenHands 上。评测脚本没有写明必须显卡。
 
-## MANIFEST
+## 本地摘录
 
-`notes/sources/nl2repo-bench/MANIFEST.md`
+私有摘录未随公开手册发布。

@@ -38,6 +38,6 @@ task、environment、verifier、agent。每题一个容器。没有看到 `task.
 
 压在 verifier 和 environment。对错要交给另一个模型，本地退出码不够用。environment 在评分时要按题起多个镜像，Linux 还要特权容器。
 
-## MANIFEST
+## 本地摘录
 
-`notes/sources/sec-bench-pro/MANIFEST.md`
+私有摘录未随公开手册发布。

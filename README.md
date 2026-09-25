@@ -1,6 +1,10 @@
-# Harbor 0.23.0 薄抽象与转化手册
+# Harbor 接入判断手册（公开镜像）
 
-本仓库是 Harbor 0.23.0 钉选版薄抽象与转化手册的公开镜像。正文钉在 Origin tip `1976a2fdacc358ffaa207184fbca9409e78a638b`（`justin-2/benchmarkresearchanddesign`）。
+本包导出 Origin 仓库 `justin-2/benchmarkresearchanddesign` 在 commit `225745ef690ed03f8ec679029f2531af78a8282a` 的读者路径。手册按 Harbor 0.23.0 写接入判断。
+
+本公开镜像不含 `notes/`。转化清单里若出现 `notes/` 路径，该路径只指出处。文件打不开时，按该清单的停句停住。
+
+本包不含调研合同全文。`prompts/bench-list.md` 开头指向同目录的 `harbor-unified-abstraction-research.md`，该文件不在本镜像中。slug 仍以 `prompts/bench-list.md` 为准。
 
 ## 阅读顺序
 
@@ -9,17 +13,10 @@
 3. [Layer1 总表](docs/layer1.md)
 4. [Registry](docs/registry.md)
 5. [转化路径](docs/conversion-playbook.md)
-6. 按需打开 [介绍卡](docs/layer2/)、[冲突](docs/conflicts.md)、[来源](docs/sources.md)
+6. 需要核对单题、冲突或版本出处时，再打开 [layer2](docs/layer2/)、[冲突](docs/conflicts.md)、[来源](docs/sources.md)
 
-## 手册写什么
+slug 名单在 [bench-list](prompts/bench-list.md)。
 
-本手册给出三层轴与混类例子、轻适配与重改造的判定句、转化路径上的停句，以及各 benchmark 介绍卡。接入判断以 [Registry](docs/registry.md) 与 [组件抽象](docs/abstraction.md) 为准。
+层只有三层。task 层是 instruction、environment、verifier。运行层是 agent、trial、job，由 metric 汇总。接入层是 adapter 生成目录、dataset 列出任务。与 Harbor 的距离只取原生可接、轻适配、重改造、暂不宜接；没有证据时写 unknown。
 
-[转化路径](docs/conversion-playbook.md) 对缺材料的条目直接停句，不补写仓库里还没有的步骤。例子清单大约覆盖 8 个 slug，其余约 44 个不在该清单；出现在例子名单不等于距离档已核实。浏览暂不写入依赖列。[programbench](docs/layer2/programbench.md) 的距离记为 `unknown`。
-
-## 文件
-
-- [MANIFEST.txt](MANIFEST.txt) — 本镜像文件清单
-- [待接入 Benchmark 名单](prompts/bench-list.md)
-
-不含私有调研笔记与合同全文。Done-when / 是否对齐合同第 7 节的勾选不进读者正文；镜像里另有 `docs/done-when.md`，仅作过程勾选，不列入阅读顺序。
+转化路径里的例子只覆盖 8 个 slug。出现在例子里，不等于距离档。核对上游时打开公开仓的钉死 commit。文件对不上就停。

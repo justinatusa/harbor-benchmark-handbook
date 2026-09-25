@@ -6,7 +6,7 @@
 
 2. 官方源。仓库 https://github.com/aisa-group/PostTrainBench ，commit `3ed1d32ff1ec1f41282be6f8ebbcec07b19fc3d1`（2026-08-21，说明 “Merge pull request #70 from aisa-group/readme_trim”）。网站 https://posttrainbench.com/ 。论文 https://arxiv.org/abs/2603.08640 。没有单独的 Hugging Face 数据集 id。`git ls-remote --tags` 没有 tag。
 
-3. 形态。`task`、`environment`、`verifier`、`agent`。清单没写 `adapter`，也没给出 main 上的 `task.toml` 或 `dataset.toml`。
+3. 形态。`task`、`environment`、`verifier`、`agent`。公开材料没有 Harbor adapter，也没有 main 上的 `task.toml` 或 `dataset.toml`。
 
 4. 与 Harbor 距离。重改造。作业文件要求一块 NVIDIA H100 80GB HBM3。Arena Hard Writing、HealthBench，以及污染和接口使用审查，都要另调模型。README 写正在加 Harbor 支持，链接是 https://github.com/aisa-group/PostTrainBench/pull/8 。清单只核实了 main。
 
@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。`environment` 绑在 Apptainer、指定型号的 GPU 和 HTCondor 上。`verifier` 要接下游分数、轨迹审查和程序化身份检查。`agent` 在容器里跑外部命令行工具，时限按小时计。
 
-10. MANIFEST 路径。`notes/sources/posttrainbench-v1-1/MANIFEST.md`
+10. 本地摘录。私有摘录未随公开手册发布。

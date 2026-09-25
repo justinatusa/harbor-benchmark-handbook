@@ -38,6 +38,6 @@ dataset、verifier、agent。评分在公开仓的 `reward.py`。没有 `task.to
 
 压在 dataset 和 environment。题目和公报不在代码仓，下载前要在 HF 上同意条款。environment 没有镜像，论文里的沙箱只是一段说明。
 
-## MANIFEST
+## 本地摘录
 
-`notes/sources/officeqa-pro/MANIFEST.md`
+私有摘录未随公开手册发布。

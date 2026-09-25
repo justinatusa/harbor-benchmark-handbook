@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。`environment` 是单份 Dockerfile，`allow_internet = true`，`gpus = 0`。两题的 compose 标志没有对应文件。`verifier` 把 0/1 写入 `reward.txt`。`agent` 由 `harbor run -a` 传入，README 没有指定唯一实现。`dataset` 用 Hub 名 `terminal-bench/terminal-bench-2-1`。轨迹审查的 `llm-judge` 在 leaderboard CI 模板里，和 89 题的解题分分开。
 
-10. MANIFEST 路径。`notes/sources/terminal-bench-2-1/MANIFEST.md`
+10. 本地摘录。私有摘录未随公开手册发布。

@@ -6,9 +6,9 @@
 
 2. 官方源。仓库 https://github.com/mathllm/MATH-V ，commit `a1f5cc3add200c0cd080fad463e500f44ef1fb41`（2025-05-16，说明 “Update README.md”）。入口 https://github.com/mathvision-cuhk/MATH-V 与这个仓的 HEAD 是同一个 SHA。论文 https://arxiv.org/abs/2402.14804 。项目页 https://mathllm.github.io/mathvision/ 。数据集 https://huggingface.co/datasets/MathLLMs/MathVision ，修订 `2837ddb3f13abaf6b3997c12d80753e5470bd46a`，`gated` 为 false。许可证 MIT。
 
-3. 形态。`dataset`、`verifier`。`models/*.py` 是直接调模型的脚本。清单没写容器形式的 `environment`，也没写 `adapter`。agent 线索是 unknown。
+3. 形态。`dataset`、`verifier`。`models/*.py` 是直接调模型的脚本。公开材料没有容器形式的 environment，也没有 Harbor adapter。agent 线索是 unknown。
 
-4. 与 Harbor 距离。unknown。题和 `evaluation/evaluate.py` 公开，规则抽出答案后做字符串和数值等价，不另调模型。入口是 Python 脚本。清单没有给出 `task.toml` 或 `dataset.toml`。缺一句评测不要 GPU。Qwen-VL 脚本的设备要求没有打开。证据不够放进其余四档。
+4. 与 Harbor 距离。重改造。题和 `evaluation/evaluate.py` 公开，规则抽出答案后做字符串和数值等价，不另调模型。没有 Harbor `task.toml`。抽到的 Qwen-VL 脚本调用 DashScope 的 `qwen-vl-max`，不要求本机显卡。
 
 5. 环境。该 SHA 没有 Dockerfile 或 compose。调用 Gemini、GPT 的示例要出网。仓内自带 `data/test.jsonl` 和 `images/`，计分不必再下 Hugging Face。GPU：unknown。Kubernetes：unknown。多容器：unknown。
 
@@ -16,8 +16,8 @@
 
 7. agent/runtime。`models/*.py` 直接调 Gemini、GPT-4V、Qwen-VL。仓内没有工具循环、沙箱或 agent harness。
 
-8. 迁入代价。中。评分脚本在仓内。git checkout 约 145.7 MB，没有克隆进工作区，也没有 task 目录。GPU 仍是 unknown。
+8. 迁入代价。中。评分脚本在仓内。没有 task 目录。抽到的 Qwen-VL 路径走 API，不要求本机显卡。
 
-9. 对抽象的压力。缺一句评测不要 GPU。Qwen-VL 脚本的设备要求没有打开。`dataset` 没有 `dataset.toml`。`environment` 没有镜像。
+9. 对抽象的压力。`dataset` 没有 `dataset.toml`。`environment` 没有镜像。Qwen-VL 脚本走 API。
 
-10. MANIFEST 路径。`notes/sources/mathvision/MANIFEST.md`
+10. 本地摘录。私有摘录未随公开手册发布。

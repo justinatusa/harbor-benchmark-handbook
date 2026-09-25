@@ -38,6 +38,6 @@ dataset、verifier、agent。生成走 inspect-ai。没有 `task.toml` 或 `data
 
 压在 verifier。公开流程只留下生成结果。reward 要等私有服务返回。本地没有可放进 Harbor `tests/test.sh` 的评分脚本。
 
-## MANIFEST
+## 本地摘录
 
-`notes/sources/critpt/MANIFEST.md`
+私有摘录未随公开手册发布。

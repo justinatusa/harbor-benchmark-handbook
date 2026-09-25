@@ -38,6 +38,6 @@ task、dataset、verifier。代码在 `src/chartography/`，运行时是 Inspect
 
 压在 verifier。分数依赖另一个模型，而且该模型不看图。Inspect 的 task 也还不是带 `task.toml` 的 Harbor task 目录。
 
-## MANIFEST
+## 本地摘录
 
-`notes/sources/chartography/MANIFEST.md`
+私有摘录未随公开手册发布。

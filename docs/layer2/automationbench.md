@@ -6,9 +6,9 @@
 
 2. 官方源。仓库 https://github.com/zapier/AutomationBench ，commit `4a8e1061254004d9dac807054eed33fad7d1ff14`（2026-08-04，说明 “Add Opus 5 max public score to readme.”）。论文 https://arxiv.org/abs/2604.18934 。博客 https://zapier.com/blog/introducing-automationbench/ 。榜 https://zapier.com/benchmarks 。没有看到 Hugging Face 数据集。
 
-3. 形态。`task`、`environment`、`verifier`、`agent`、`dataset`。清单没写 Harbor 的 `adapter`。
+3. 形态。`task`、`environment`、`verifier`、`agent`、`dataset`。公开材料没有 Harbor adapter。
 
-4. 与 Harbor 距离。unknown。公开 600 题，按断言打分，不另调模型，入口脚本是 `auto-bench`。清单没有给出 `task.toml` 或 `dataset.toml`。公开树没有 Dockerfile。缺一句评测不要 GPU，且运行不是多容器。证据不够放进其余四档。
+4. 与 Harbor 距离。重改造。公开 600 题按断言打分，不另调模型。没有 Harbor `task.toml`，也没有 Dockerfile。状态在进程内模拟。官方榜的 private set 不在这个 commit。
 
 5. 环境。任务状态在进程内模拟。公开树没有 Dockerfile 或镜像名。跑分要访问模型服务，模拟应用写在本地。GPU、Kubernetes、多容器都是 unknown。`pyproject.toml` 依赖含 `verifiers>=0.2.0`。入口脚本是 `auto-bench`。
 
@@ -16,8 +16,8 @@
 
 7. agent/runtime。有。`auto-bench` 默认模型 `gpt-5-mini`，`--max-steps` 默认 50，`--toolset` 为 `api`、`zapier` 或 `limited_zapier`。README 同时给出 Prime Intellect 入口 `prime env install zapier/AutomationBench`。这次没有安装或运行。
 
-8. 迁入代价。中。公开题和断言脚本都在。没有 task 目录，环境是进程内模拟，容器定义没公开。GPU 仍是 unknown。
+8. 迁入代价。中。公开题和断言脚本都在。没有 task 目录，环境是进程内模拟，容器定义没公开。评测脚本没有写明必须显卡。
 
-9. 对抽象的压力。缺一句评测不要 GPU，且运行不是多容器。压力在 `environment`。47 个应用的状态在进程里，公开树没有镜像。`adapter` 要把这些题收成 task 目录，清单里没有这份脚手架。`agent` 回路在 `auto-bench`。
+9. 对抽象的压力。压力在 `environment`。47 个应用的状态在进程里，公开树没有镜像，也不是多容器。接入要新写 task 目录。`agent` 回路在 `auto-bench`。
 
-10. MANIFEST 路径。`notes/sources/automationbench/MANIFEST.md`
+10. 本地摘录。私有摘录未随公开手册发布。

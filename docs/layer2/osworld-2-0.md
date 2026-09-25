@@ -6,7 +6,7 @@
 
 2. 官方源。https://github.com/xlang-ai/OSWorld-V2 。抓取时 `main` 与 tag `osworld-v2.1` 都指向 `3d778a3c9a34a079316f70df023b166700445792`（2026-09-16）。`benchmark_releases/osworld-v2.1.json` 把 `osworld_code.base_commit` 写成 `325ab352e2ff7410854bf8e3324c391bc60e7526`。项目页 https://osworld-v2.xlang.ai/ 。论文 https://arxiv.org/abs/2606.29537 。任务类在 Hugging Face `xlangai/osworld_v2_tasks`，commit `0a1aadad95aa79b00b3783e717d865089ab06e26`，`gated: auto`。
 
-3. 形态。`task`、`environment`、`verifier`、`agent`。清单没写 `adapter`。
+3. 形态。`task`、`environment`、`verifier`、`agent`。公开材料没有 Harbor adapter。
 
 4. 与 Harbor 距离。暂不宜接。任务类和完整资产 gated。要图形桌面，网站应用各自一个容器，总分里还有 judge 模型。清单没有给出 `task.toml` 或 `dataset.toml`。
 
@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。`environment` 有两层：桌面虚拟机，以及按应用拆开的网站容器。`verifier` 把程序检查和 judge 混在同一总分里，judge 只覆盖少数检查点。
 
-10. MANIFEST 路径。`notes/sources/osworld-2-0/MANIFEST.md`
+10. 本地摘录。私有摘录未随公开手册发布。

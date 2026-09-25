@@ -6,7 +6,7 @@
 
 2. 官方源。https://github.com/xlang-ai/OSWorld ，`main` HEAD `b138d348256078fa634fc3b73567a7337c793e6b`（2026-09-14）。博客 https://xlang.ai/blog/osworld-verified 。原论文 https://arxiv.org/abs/2404.07972 。虚拟机镜像在 Hugging Face `xlangai/ubuntu_osworld`，修订 `a5d9c3eaae98eebf6e3a0beb84e7e47cf72ae133`。
 
-3. 形态。`task`、`environment`、`verifier`、`agent`。清单没写 `adapter`。
+3. 形态。`task`、`environment`、`verifier`、`agent`。公开材料没有 Harbor adapter。
 
 4. 与 Harbor 距离。重改造。环境是图形桌面，并且可以并行多个环境。清单没有给出 `task.toml` 或 `dataset.toml`。
 
@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。`environment` 是容器里的桌面虚拟机，观察靠截图，动作靠 `pyautogui`。`verifier` 读的是虚拟机终态。评测还可以同时开多台环境。
 
-10. MANIFEST 路径。`notes/sources/osworld-verified/MANIFEST.md`
+10. 本地摘录。私有摘录未随公开手册发布。

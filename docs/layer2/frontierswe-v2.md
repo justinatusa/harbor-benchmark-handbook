@@ -38,6 +38,6 @@ v2 说明页写默认回路是 Proximus。文中说它在 mini-swe-agent 上加�
 
 压在 dataset 和 environment。公开 task 目录是 17 题，站上 v2 是 34 题。部分 environment 要 GPU，还指向仓库自带的 Modal environment。
 
-## MANIFEST
+## 本地摘录
 
-`notes/sources/frontierswe-v2/MANIFEST.md`
+私有摘录未随公开手册发布。

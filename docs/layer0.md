@@ -2,7 +2,7 @@
 
 名字里带 Harbor，不代表这个 benchmark 已经能接。
 
-本页按 Harbor 0.23.0 安装包笔记和公开文档笔记写组件地图。安装包路径都相对于 `site-packages/harbor`。笔记里没有的句子，这里写 unknown。
+本页按本机 Harbor 0.23.0 安装包和文档站写组件地图。安装包路径都相对于 `site-packages/harbor`。安装包和文档站对不上、又不能由这份安装包写死的句子，这里写 unknown。
 
 ## 官方组件地图
 
@@ -16,11 +16,11 @@
 
 单题目录约定这些文件名：`instruction.md`、可选 `trajectory.json`、`task.toml`、`environment/`、`solution/`、`tests/`，多步再加 `steps/<name>/`。出处：`models/task/paths.py`。
 
-`Task.is_valid_dir` 要求 `task.toml` 与 `environment/`。单步还要 `instruction.md`。共享 verifier 还要与 `[environment].os` 匹配的 `test.sh` 或 `test.bat`。缺文件则目录不算 task。出处：安装包笔记里的 task 目录检查；文件名约定在 `models/task/paths.py`。
+`Task.is_valid_dir` 要求 `task.toml` 与 `environment/`。单步还要 `instruction.md`。共享 verifier 还要与 `[environment].os` 匹配的 `test.sh` 或 `test.bat`。缺文件则目录不算 task。出处：`models/task/task.py`；文件名约定在 `models/task/paths.py`。
 
 文档站写 task 是一条或多条 instruction、一个 sandbox environment，外加一个 verifier，实现成 Harbor task format 的目录。出处：<https://docs.harborframework.com/core-concepts>。另一句是 an instruction, environment, and test script。出处：<https://docs.harborframework.com/core-concepts/tasks/overview>。
 
-`task.toml` 在这里只是目录里的文件名。笔记没有给出一份可以打开的 `task.toml` 磁盘路径，路径 unknown。
+`task.toml` 在任务目录里是文件名。安装包模板在 `cli/template-task/task.toml` 与 `cli/template-adapter/task-template/task.toml`。
 
 ### environment
 
@@ -28,11 +28,11 @@
 
 题目目录里的 `environment/` 是环境定义目录。`is_valid_dir` 要求该目录存在。里面放镜像定义，不在这里选择 docker 还是 singularity。出处：`models/task/paths.py`。文档站写这个目录多数时候放 `Dockerfile` 或 `docker-compose.yaml`。出处：<https://docs.harborframework.com/core-concepts/tasks/environment>。
 
-运行期仍要 `docker_image`、`Dockerfile` 或 `docker-compose.yaml` 之一，否则 `FileNotFoundError`。出处：`environments/definition.py`。
+`Task.is_valid_dir` 缺 `environment/` 时返回假，不抛 `FileNotFoundError`。运行期定义检查要 `docker_image`、`environment/Dockerfile` 或 `environment/docker-compose.yaml` 之一，三者都没有才抛 `FileNotFoundError`。设了 `docker_image` 之后不再要求 Dockerfile。出处：`models/task/task.py`，`environments/definition.py`。
 
 `NetworkMode` 可省略时默认 `public`。另外两个取值是 `no-network` 和 `allowlist`。出处：`models/task/config.py`。
 
-`EnvironmentType` 是运行时 sandbox 枚举，不是 `task.toml` 字段。trial 和 job 的 environment 类型都空时，默认 `docker`。出处：`models/environment_type.py`。默认 `docker` 这一句的安装包行为见笔记里的 `set_default_type`。
+`EnvironmentType` 是运行时 sandbox 枚举，不是 `task.toml` 字段。job 与 trial 的 `environment.type` 和 `import_path` 都空时，默认 `docker`。出处：`models/trial/config.py`。这和缺 `gpus` 不是同一条规则。缺 `gpus` 时有效 GPU 数是 0。
 
 ### verifier
 
@@ -40,7 +40,7 @@ verifier 只认 `reward.txt` 或 `reward.json`，没有 LLM judge 类型。
 
 默认评分器上传 tests，执行 `test.sh` 或 `test.bat`，再读 reward 文件。解析器先认 `reward.json`，再认 `reward.txt`。出处：`verifier/verifier.py`。
 
-`reward.txt` 解析成 `{"reward": float}`，容器路径 `/logs/verifier/reward.txt`。`reward.json` 是多键奖励，优先于 `reward.txt`。出处：`models/trial/paths.py`。两个文件都没有则 `RewardFileNotFoundError`。这个错误名见安装包笔记对 `verifier/verifier.py` 的说明。
+`reward.txt` 解析成 `{"reward": float}`，容器路径 `/logs/verifier/reward.txt`。`reward.json` 是多键奖励，优先于 `reward.txt`。出处：`models/trial/paths.py`。两个文件都没有则 `RewardFileNotFoundError`。出处：`verifier/verifier.py`。
 
 本安装的 Python 源码里没有 `LLMJudge` 或等价 verifier 接口，也没有名为 LLM judge 的类或方法。`cli/adapter_review.py` 把 LLM 评分写成 `tests/` 里的 prompt、model、rubric，由 test 脚本自己调模型，再写 reward 文件。`verifier/verifier.py` 只在 `verifier.env` 里出现 `api_key` 时打日志。未随这个 wheel 安装的 LLM judge 基类是否存在：unknown。
 
@@ -50,7 +50,7 @@ verifier 只认 `reward.txt` 或 `reward.json`，没有 LLM judge 类型。
 
 文档站写 agent 是完成 task 的程序，预置集成，或用 `BaseAgent` 自己写。出处：<https://docs.harborframework.com/core-concepts>。
 
-安装包里 `BaseAgent` 有 `name`、`version`、`setup`、`run`。出处：`agents/base.py`。内置名字走 `AgentFactory`，`module.path:ClassName` 走 `import_path`。出处：`agents/factory.py`。
+安装包里 `BaseAgent` 有 `name()`、`version()`、`setup()`、`run()`。出处：`agents/base.py`。`BaseInstalledAgent` 继承 `BaseAgent`，并要求实现 `install()`；它的 `setup()` 会调用 `install()`。出处：`agents/installed/base.py`。文档站建议回路留在环境外时继承 `BaseAgent`。该页未标版本。出处：<https://docs.harborframework.com/core-concepts/agents/custom-agents>。内置名字走 `AgentFactory`，`module.path:ClassName` 走 `import_path`。出处：`agents/factory.py`。
 
 task 目录不包含 agent 实现。文档站没写新 agent 要往任务目录加哪个文件。出处：<https://docs.harborframework.com/core-concepts/agents/custom-agents>。
 
@@ -132,18 +132,15 @@ adapter 可以生成上述 task 目录。job 不加载它，所以它不是运�
 
 1. 打开 `docs/sources.md`，确认本机是 Harbor 0.23.0。文档站没有标版本，站上的句子不能单独当成 0.23.0 的定论。
 2. 用本页词表看 task、environment、verifier、agent、dataset、adapter、trial、job、metric 各指什么。
-3. 在 `docs/registry.md` 查这一题的「与 Harbor 距离」。格子是 `unknown` 时，不要当成能接。未核实的 slug 写在 `notes/final-report.md`。
-这五题勿当能接：`mmmu-pro`、`mathvision`、`video-mme`、`automationbench`、`nl2repo-bench`，距离保持 `unknown`。缺的是清单没写评测是否不要 GPU，`nl2repo-bench` 还没写死两个镜像算不算多容器。`programbench` 距离也是 `unknown`：原标轻适配但缺 `task.toml`，勿当能接。轻适配和重改造的打勾句在 `docs/layer1.md`。
-4. 距离不是 `unknown` 时，打开 `docs/conversion-playbook.md` 里对应的节，按 `- [ ]` 做。要另调模型、要 GPU、要出网、多容器或图形桌面，各有一节。任务不公开或 gated 的，停在暂不宜接，不要写 `tests/test.sh`。
-`docs/conversion-playbook.md` 的例子盖住 8 个 slug（`spreadsheetbench`、`posttrainbench-v1-1`、`osworld-verified`、`charxiv`、`browsecomp`、`aa-briefcase`、`deepswe-v1-1`、`swe-bench-pro`），其余 44 个不在这份清单里，因为例子只来自本轮打开过的 MANIFEST，52 题没有全部抽象完。
+3. 在 `docs/registry.md` 查这一题的「与 Harbor 距离」。格子是 `unknown` 时，不要当成能接。轻适配和重改造怎么分开，写在 `docs/layer1.md`。
+4. 距离不是 `unknown`、也不是暂不宜接时，打开 `docs/conversion-playbook.md` 里对应的依赖节。要另调模型、要 GPU、要出网、多容器或图形桌面，各有一节。任务不公开或 gated 的，停在暂不宜接，不要写 `tests/test.sh`。
+转化路径里的例子只覆盖 8 个 slug：`spreadsheetbench`、`posttrainbench-v1-1`、`osworld-verified`、`charxiv`、`browsecomp`、`aa-briefcase`、`deepswe-v1-1`、`swe-bench-pro`。其余 slug 先看 registry 的距离和依赖，再决定能不能套同一节。出现在这 8 个里，不等于距离档已经核实。勾选打不开公开文件时停住，不要补写仓库里没有的步骤。
 
-名词为什么收成这三层，看 `docs/abstraction.md`。
+统一抽象收成三层，名词都是 Harbor 已有的词。task 层是 instruction、environment、verifier。运行层是 agent、trial、job，job 用 metric 汇总 reward。接入层是 adapter 只生成 task 目录，dataset 把 task 列出来。judge 模型、GPU、出网、多容器、图形桌面、gated 数据不单开一层，写在依赖里。为什么不多不少，看 `docs/abstraction.md`。
 
 ## 未知
 
-- 一份具体 `task.toml` 的磁盘路径：笔记没给，unknown。
+- 模板里的 `task.toml` 在安装包 `cli/template-task/task.toml`（`schema_version` `"1.4"`）和 `cli/template-adapter/task-template/task.toml`（`"1.0"`）。任务配置不拒绝 `"1.0"`。
 - `singularity-compose.yaml` 是否仍被某种环境当定义文件：unknown。它只出现在 `models/task/paths.py` 与 `models/task/task.py` 的目录注释里。
-- `cli/template-task/tests/test.sh` 注释里的 `/logs/verifier/rewards.json` 是否另有读者：unknown。解析器只认 `reward.json`，然后 `reward.txt`。
-- template-adapter 的 `task.toml` 写 `schema_version` `1.0` 时，0.23.0 运行时是否被别处拒绝：unknown。笔记没给这个 `task.toml` 的磁盘路径。
-- 未随这个 wheel 安装的 LLM judge 基类是否存在：unknown。
-- `DockerEnvironment` 是否另认 `docker-compose.yml`：unknown。官方常量 `COMPOSE_FILE_NAME` 是 `docker-compose.yaml`。出处：`environments/definition.py`。
+- 未随这个 wheel 安装的 LLM judge 基类是否存在：unknown。本安装没有 `LLMJudge`。
+- `DockerEnvironment` 只使用 `environment/docker-compose.yaml`，不认 `docker-compose.yml`。OpenSandbox 见到这两个文件名都会拒绝。模板注释里的 `/logs/verifier/rewards.json` 没有读者。评分器先读 `reward.json`，再读 `reward.txt`。

@@ -6,7 +6,7 @@
 
 2. 官方源。仓库 https://github.com/rdi-berkeley/agents-last-exam ，commit `d10fb61a14f9719774c3520c5763068b28ef5546`（2026-09-04，说明 “Merge pull request #21 from rdi-berkeley/feat/antigravity-cli”）。论文 https://arxiv.org/abs/2606.05405 。站 https://agents-last-exam.org/ 。榜 https://agenthle.org/leaderboard 。任务卡 https://huggingface.co/datasets/agents-last-exam/agents-last-exam ，修订 `ea617358e3c2e244d6f4d473c6a6a85d394bf90d`。本地数据包 https://huggingface.co/datasets/agents-last-exam/agents-last-exam-data-archive ，修订 `dedf6556c88f7dfd4fce891f9fa213e66584c71e`，gated 为 manual。
 
-3. 形态。`task`、`environment`、`verifier`、`agent`、`dataset`。清单没写 Harbor 的 `adapter`。
+3. 形态。`task`、`environment`、`verifier`、`agent`、`dataset`。公开材料没有 Harbor adapter。
 
 4. 与 Harbor 距离。暂不宜接。本地数据包 gated，约 202 GiB，要先申请。清单没有给出 `task.toml` 或 `dataset.toml`。论文写代理动作包括浏览器、shell 和键鼠，README 写用 MCP 补桌面动作。需要 GPU 的任务用 NVIDIA L4。开源任务树 6.8% 要另调模型。
 
@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。压力在 `environment` 和 `verifier`。环境要键鼠和桌面，部分题要 GPU。`verifier` 主路径是程序分，6.8% 要在评分里再调模型。`agent` 回路有的在沙箱里，有的在外面。
 
-10. MANIFEST 路径。`notes/sources/agents-last-exam/MANIFEST.md`
+10. 本地摘录。私有摘录未随公开手册发布。

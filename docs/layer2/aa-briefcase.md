@@ -6,7 +6,7 @@
 
 2. 官方源。评测页 https://artificialanalysis.ai/evaluations/aa-briefcase 。公告 https://artificialanalysis.ai/articles/aa-briefcase （页面日期 June 18, 2026）。没有计分任务仓，也没有 arXiv。公告点名的代理框架是 https://github.com/ArtificialAnalysis/Stirrup ，main HEAD `247f24d56b2108235880ed2a2baea5d35b5a67ee`（2026-08-04，说明 “chore: add 7 day exclusion rule (#81)”）。公开示例 https://huggingface.co/datasets/ArtificialAnalysis/AA-Briefcase-Lite ，修订 `4dec557b47d43867a1648c0974db1d8208c8b677`。
 
-3. 形态。正榜材料能对上 `task`、`environment`、`verifier`、`agent`。公开示例才有 `dataset`，而且不进榜。清单没写 `adapter`。
+3. 形态。正榜材料能对上 `task`、`environment`、`verifier`、`agent`。公开示例才有 `dataset`，而且不进榜。公开材料没有 Harbor adapter。
 
 4. 与 Harbor 距离。暂不宜接。正榜题面和评分表保持私有。没有公开的 `task.toml` 或 `dataset.toml`。
 
@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。`dataset` 接不上正榜，题和评分表不公开。`verifier` 是三个模型抽样裁决，再拟合 Elo。`environment` 是没有出网的 E2B sandbox。`agent` 是 Stirrup 的代码执行循环。
 
-10. MANIFEST 路径。`notes/sources/aa-briefcase/MANIFEST.md`
+10. 本地摘录。私有摘录未随公开手册发布。

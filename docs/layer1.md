@@ -11,11 +11,69 @@
 
 对照一个 slug 打勾。用词与 `docs/registry.md` 的「与 Harbor 距离」列一致。
 
-- 轻适配。官方或仓内已有可对上的 Harbor task 形态：有 task 目录，或 MANIFEST、介绍卡里已写出的等价证据。
-- 重改造。需要新写或大改 task、环境或评分回路。
+- 原生可接。官方目录已经是 Harbor task，并且说明用 `harbor run` 跑。
+- 轻适配。仓内已有 Harbor task 目录（`task.toml`、`environment/`、评分脚本），但版本、入口或网络还不是 0.23.0。没有 task 目录不算轻适配。
+- 重改造。题和评分公开，但没有 Harbor task 目录，接入要新写 task、环境或评分回路。
+- 暂不宜接。正榜题面不公开，或数据集 gated，写不出可交付的题。
 
-`notes/verify/v2/08-closed-gated.md` 的原句是「`docs/layer1.md` 的轻适配要有能交出去的 task 目录」。本轮把「能交出去的 task 目录」收成上面的轻适配句。那份笔记没有写后半句：MANIFEST、介绍卡里已写出的等价证据，以及重改造这句。
+`programbench`、`omnidocbench`、`benchcad` 都没有 Harbor task 目录，距离是重改造。`mmmu-pro`、`mathvision`、`video-mme`、`automationbench`、`nl2repo-bench` 同样没有 task 目录，评测脚本没有写明必须显卡，距离也是重改造。
 
-`programbench` 对不上轻适配。`notes/sources/programbench/MANIFEST.md` 与 `docs/layer2/programbench.md` 都没有 task 目录，也没有可对上的 Harbor task 形态。MANIFEST 没有写明需要新写或大改 task、环境或评分。`docs/registry.md` 该行距离是 `unknown`。上面两句单独用来打勾。
 
-表的列还会删。一列如果不能改变接入判断，就从 registry 拿掉，细节留在 `notes/`。
+## 距离一览
+
+全列在 `docs/registry.md`。这里只留判断用的三列。
+
+| slug | 与 Harbor 距离 | 迁入代价 |
+|---|---|---|
+| gdpval-aa-v2-1 | 重改造 | 高 |
+| aa-briefcase | 暂不宜接 | 高 |
+| agents-last-exam | 暂不宜接 | 高 |
+| draco | 重改造 | 高 |
+| browsecomp | 重改造 | 高 |
+| onemillion-bench | 重改造 | 高 |
+| spreadsheetbench | 重改造 | 高 |
+| spreadsheetbench-2 | 重改造 | 高 |
+| analystbench | 暂不宜接 | 高 |
+| officeqa-pro | 暂不宜接 | 高 |
+| officeqa-pro-v2 | 暂不宜接 | 高 |
+| finance-agent-v2 | 重改造 | 高 |
+| apex-agents | 暂不宜接 | 高 |
+| frontier-finance | 重改造 | 高 |
+| big-finance-bench | 重改造 | 高 |
+| osworld-2-0 | 暂不宜接 | 高 |
+| osworld-verified | 重改造 | 高 |
+| gdp-pdf | 重改造 | 高 |
+| mmmu-pro | 重改造 | 中 |
+| omnidocbench | 重改造 | 中 |
+| charxiv | 重改造 | 高 |
+| babyvision | 重改造 | 高 |
+| perception-bench | 重改造 | 高 |
+| zerobench | 暂不宜接 | 高 |
+| chartography | 重改造 | 高 |
+| vision2web | 重改造 | 高 |
+| benchcad | 重改造 | 高 |
+| 3dcodebench | 重改造 | 高 |
+| mathvision | 重改造 | 中 |
+| video-mme | 重改造 | 高 |
+| automationbench | 重改造 | 中 |
+| toolathlon-verified | 重改造 | 高 |
+| mcp-atlas | 重改造 | 高 |
+| terminal-bench-4-0 | 原生可接 | 低 |
+| deepswe-v1-1 | 轻适配 | 中 |
+| frontierswe-v2 | 暂不宜接 | 高 |
+| nl2repo-bench | 重改造 | 中 |
+| terminal-bench-2-1 | 原生可接 | 低 |
+| swe-bench-pro | 原生可接 | 中 |
+| programbench | 重改造 | 中 |
+| swe-marathon | 轻适配 | 高 |
+| swe-atlas | 轻适配 | 中 |
+| mls-bench-lite | 轻适配 | 低 |
+| posttrainbench-v1-1 | 重改造 | 高 |
+| frontiercode-1-1 | 暂不宜接 | 高 |
+| cursorbench | 暂不宜接 | 高 |
+| sec-bench-pro | 重改造 | 高 |
+| exploitgym | 重改造 | 高 |
+| hle | 暂不宜接 | 高 |
+| critpt | 暂不宜接 | 高 |
+| aa-omniscience | 重改造 | 高 |
+| aa-lcr-v1-1 | 重改造 | 高 |

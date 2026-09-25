@@ -6,7 +6,7 @@ Lite 是全量 140 题里的 30 题子集。清单写这些 Harbor 目录在 0.6
 
 2. 官方源。仓库 https://github.com/Imbernoulli/MLS-Bench ，commit `80cf5c5cc8f70fb1b09f185e59ebf5eca04f610c`（2026-09-18，说明 “Merge pull request #102 … Editable-scope fixes”）。`git ls-remote --tags` 没有标签。论文 https://arxiv.org/abs/2605.08678 。站 https://mls-bench.com ，榜 https://mls-bench.com/leaderboard 。HF `Bohan22/MLS-Bench-Tasks`，dataset sha `b50fe197b609b1225ba296dbacd0dd1a45fb4cf4`，`lastModified` 2026-05-11，早于当前 `main`。
 
-3. 形态。`task`、`environment`、`verifier`、`agent`、`dataset`。Lite 的 30 个 docker 变体是 `harbor/tasks-docker/mls-bench__<id>/task.toml`。三份名单是 `harbor/tasks-docker/dataset.toml`、`harbor/tasks-modal/dataset.toml`、`harbor/tasks-daytona/dataset.toml`，各 140 条，没有单独的 Lite `dataset.toml`。Lite 的点名在 `harbor/run-modal-lite.yaml` 与 `harbor/run-daytona-lite.yaml` 的 `task_names`。清单没写 `adapter`。
+3. 形态。`task`、`environment`、`verifier`、`agent`、`dataset`。Lite 的 30 个 docker 变体是 `harbor/tasks-docker/mls-bench__<id>/task.toml`。三份名单是 `harbor/tasks-docker/dataset.toml`、`harbor/tasks-modal/dataset.toml`、`harbor/tasks-daytona/dataset.toml`，各 140 条，没有单独的 Lite `dataset.toml`。Lite 的点名在 `harbor/run-modal-lite.yaml` 与 `harbor/run-daytona-lite.yaml` 的 `task_names`。公开材料没有 Harbor adapter。
 
 4. 与 Harbor 距离。轻适配。清单写了这 30 个 `task.toml` 路径。Harbor README 写 bundles 在 Harbor 0.6.6 和 0.22.0 上跑过，Modal 路径要求 Harbor ≥ 0.22。没有写成 Harbor 0.23.0。没有 git tag。
 
@@ -20,4 +20,4 @@ Lite 是全量 140 题里的 30 题子集。清单写这些 Harbor 目录在 0.6
 
 9. 对抽象的压力。`environment` 要显卡，并且 `task.toml` 允许出网。`verifier` 把程序算出的分数写入 reward 文件。`dataset` 没有单独的 Lite 名单，Lite 用 `harbor/run-modal-lite.yaml` 与 `harbor/run-daytona-lite.yaml` 的 `task_names`。`agent` 可以走仓内循环，也可以走 Harbor 的 agent。
 
-10. MANIFEST 路径。`notes/sources/mls-bench-lite/MANIFEST.md`
+10. 本地摘录。私有摘录未随公开手册发布。

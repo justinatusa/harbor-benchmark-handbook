@@ -1,11 +1,16 @@
-README.md
+# MANIFEST
+
+来源 commit: 225745ef690ed03f8ec679029f2531af78a8282a
+范围: 读者路径。不含 notes/、调研合同全文、BACKGROUND。
+
+## 文件
+
 docs/abstraction.md
 docs/conflicts.md
 docs/conversion-playbook.md
-docs/done-when.md
+docs/.gitkeep
 docs/layer0.md
 docs/layer1.md
-docs/layer2/.gitkeep
 docs/layer2/aa-briefcase.md
 docs/layer2/agents-last-exam.md
 docs/layer2/automationbench.md
@@ -17,6 +22,7 @@ docs/layer2/cursorbench.md
 docs/layer2/deepswe-v1-1.md
 docs/layer2/frontierswe-v2.md
 docs/layer2/gdpval-aa-v2-1.md
+docs/layer2/.gitkeep
 docs/layer2/hle.md
 docs/layer2/mathvision.md
 docs/layer2/mcp-atlas.md
@@ -40,7 +46,5 @@ docs/layer2/video-mme.md
 docs/registry.md
 docs/sources.md
 prompts/bench-list.md
-MANIFEST.txt
-
-缺失
-无
+README.md
+MANIFEST

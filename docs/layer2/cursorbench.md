@@ -38,6 +38,6 @@ agent、environment、verifier、dataset。4.0 页没有公开 task 目录。没
 
 压在 dataset 和 verifier。dataset 不公开，接不进 Harbor 的 dataset。3.x 材料里的 verifier 要另跑一套代理来打分。4.0 没给出可复写的规则。3.x 的 environment 还可以带图形界面，4.0 没确认。
 
-## MANIFEST
+## 本地摘录
 
-`notes/sources/cursorbench/MANIFEST.md`
+私有摘录未随公开手册发布。

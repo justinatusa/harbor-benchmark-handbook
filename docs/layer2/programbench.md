@@ -6,9 +6,9 @@
 
 2. 官方源。仓库 https://github.com/facebookresearch/ProgramBench ，commit `b08d8621031f5f5abc4d3ffc2950256c83fbfe42`（2026-09-08，说明 “Pin pytest rerun version”）。该仓 `pushed_at` 晚于这个 commit，清单只钉 main 的这个 SHA。论文 https://arxiv.org/abs/2605.03546 。站 https://programbench.com/ 。测试集 https://huggingface.co/datasets/programbench/ProgramBench-Tests ，修订 `de0ddfb637590c7ecb54fa0b5301f6dc7dfbcee5`。
 
-3. 形态。`task`、`environment`、`verifier`、`dataset`、`agent`。代理实现不在本仓。清单没写 Harbor 的 `adapter`。
+3. 形态。`task`、`environment`、`verifier`、`dataset`、`agent`。代理实现不在本仓。公开材料没有 Harbor adapter。
 
-4. 与 Harbor 距离。unknown。原标轻适配但缺 `task.toml`，与 `notes/verify/v2/08-closed-gated.md` 冲突，勿当能接。清单没有给出 `task.toml` 或 `dataset.toml`，介绍卡也没有 Harbor task 目录。MANIFEST 没有写明需要新写或大改 task、环境或评分，所以不记成重改造。200 题和测试公开。默认分是行为测试，不另调模型。一题一个容器。论文实验写每题 20 CPU、60GB RAM，`container.py` 只传 `--cpus`，没有 `--gpus`。没看到图形桌面，也没看到多容器。
+4. 与 Harbor 距离。重改造。200 题和测试公开，默认分是行为测试，不另调模型。没有 Harbor `task.toml`。一题一个容器。`container.py` 的 `docker run` 只传 `--cpus`，没有 `--gpus`。没看到图形桌面，也没看到多容器。接入要新写 task 目录。
 
 5. 环境。Docker Hub 组织 `programbench` 的 `linux/amd64` 镜像。推理 tag `task_cleanroom_v6`，评测示例 tag `task_v6`。`src/programbench/container.py` 用 `docker run` 起一个长驻容器。论文写基础镜像来自 ubuntu:22.04。推理容器禁止出网。评测机要能拉镜像，并从 Hugging Face 下测试。没看到题目要求 GPU。Kubernetes：unknown。多容器：没看到。
 
@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。压力在 `environment` 和 `agent`。推理容器必须断网，评测机却要拉镜像和测试。`agent` 基线不在本仓。`verifier` 要跑整包行为测试。`dataset` 没有 `dataset.toml`。
 
-10. MANIFEST 路径。`notes/sources/programbench/MANIFEST.md`
+10. 本地摘录。私有摘录未随公开手册发布。

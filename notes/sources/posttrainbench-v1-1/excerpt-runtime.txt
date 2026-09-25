@@ -1,0 +1,41 @@
+# Excerpt. Not a clone. No secrets.
+# Repo: https://github.com/aisa-group/PostTrainBench
+# Commit: 3ed1d32ff1ec1f41282be6f8ebbcec07b19fc3d1
+# No git tags on the remote at fetch time.
+
+# containers/standard.def
+#   Bootstrap: docker
+#   From: nvidia/cuda:12.9.1-cudnn-devel-ubuntu22.04
+#   inspect_evals pin: 06001a83e6d7c709c2ede0570dce7f1031a0bad8
+#   %labels Version v1.1
+#   help text: use --nv for NVIDIA GPU support
+
+# src/commit_utils/single_task.sub
+#   num_gpus = 1
+#   request_memory = 131072
+#   request_cpus = 16
+#   request_gpus = $(num_gpus)
+#   requirements = TARGET.CUDADeviceName == "NVIDIA H100 80GB HBM3"
+#   request_disk = 400G
+#   scheduler file is HTCondor, not a Kubernetes manifest
+
+# src/run_task.sh agent phase
+#   apptainer exec --nv --cleanenv ... ${CONTAINER}.sif
+#   no --net / network-none flag in that exec
+#   prompt text says "Internet access is unrestricted."
+
+# scripts/factors.json weights
+#   aime2025 0.226536549919078
+#   arenahardwriting 0.0903518275042778
+#   bfcl 0.0746078457817324
+#   gpqamain 0.22462215653948
+#   gsm8k 0.0935882347031865
+#   healthbench 0.184144830733019
+#   humaneval 0.106148554819225
+
+# Judge model names in task scripts at this commit
+#   arenahardwriting/evaluate.py  JUDGE_MODEL = "gpt-5-mini"
+#   healthbench/evaluate.py       JUDGE_MODEL = "gpt-5-mini"
+# src/judges/README.md
+#   contamination / api-usage / ptb-lookup: GPT-5.4 via codex CLI
+#   general_judge: GPT-5.6 Terra, codex CLI 0.144.5

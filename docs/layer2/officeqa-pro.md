@@ -40,4 +40,4 @@ dataset、verifier、agent。评分在公开仓的 `reward.py`。没有 `task.to
 
 ## 本地摘录
 
-私有摘录未随公开手册发布。
+见 [`notes/sources/officeqa-pro/MANIFEST.md`](../../notes/sources/officeqa-pro/MANIFEST.md)。

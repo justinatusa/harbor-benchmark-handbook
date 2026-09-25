@@ -1,0 +1,13 @@
+来源：https://vals.ai/benchmarks/fabv2 ，页面写 Updated 9/23/2026。抓取日 2026-09-24 Asia/Shanghai。
+
+页面背景句：The benchmark tests a model’s ability to perform the work of entry-level financial analysts — answering difficult questions on public company filings.
+
+数据集：Public 27 道开放样本，Private Validation 450 道可授权，Test 450 道不公开。页面上的结果只用 Test。公开 harness 链接到 https://github.com/vals-ai/finance-agent-v2 。
+
+评分：每题是加权 checks，其中一部分是 dealbreaker。任一 dealbreaker 失败则该题 0 分。Partial Credit 是主指标，All-Pass 是次指标。All responses are graded by a three-judge LLM jury consisting of three frontier models: GPT-5.4, Gemini-3.1-Pro, and Claude Sonnet 4.6.
+
+工具（页面 Methodology）：edgar_search、web_search、parse_html_page、retrieve_information、calculator、price_history。每题时限两小时。
+
+页面引用的论文是 v1：https://arxiv.org/abs/2508.00828 ，题名 Finance Agent Benchmark: Benchmarking LLMs on Real-world Financial Research Tasks。
+
+代码核对：commit 502aab6fdaa3fb9294905c7453f89882baa8d39b 的 `finance_agent/tools.py` 中 `VALID_TOOLS` 为 web_search、retrieve_information、parse_html_page、edgar_search、calculator、price_history。`finance_agent/get_agent.py` 有 `MAX_TIME_SECONDS = 2 * 60 * 60`。`retrieve_information` 的说明写明对已存文档再发一次 LLM prompt。README 的工具列表没有写 calculator，以代码和页面为准。

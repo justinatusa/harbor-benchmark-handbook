@@ -1,0 +1,7 @@
+来源：https://huggingface.co/datasets/databricks/officeqa-pro-v2 数据集卡片，抓取日 2026-09-24 Asia/Shanghai。卡片写数据集 gated，访问前要同意不拿答案键去训练要在 OfficeQA 上评测的模型，也不拿它抬分。
+
+OfficeQA Pro v2 是 Databricks 的 grounded reasoning 基准，题库 90 题，源文档 1,435 个 PDF，时间跨度 1793–2024。题目中位引用 5.5 份文档（范围 1–24）。卡片写这是新语料，用来看在原来 OfficeQA（Treasury Bulletins，1939–2025）上开发的 agent 能不能泛化。
+
+卡片写评分函数在 https://github.com/databricks/officeqa 的 `reward.py`，`score_answer` 处理裸数字、货币和方括号标签/数值列表。数据集许可 CC-BY-SA 4.0，代码许可 Apache 2.0。卡片给出的总体积是 14.1 GB；PDF 约 13.3 GB，解析 JSON 约 794 MB。
+
+博客 https://www.databricks.com/blog/introducing-officeqa-pro-v2-new-benchmark-enterprise-grounded-reasoning 把同一基准写成约 1,400 份 PDF、约 120,000 页的联邦收支账，并写它先用于 Grounded Reasoning Cup。

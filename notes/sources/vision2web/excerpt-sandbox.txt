@@ -1,0 +1,16 @@
+来源 SHA: 577f9397b3db8fc6d828adde254a830caa65d515
+仓库: https://github.com/zai-org/Vision2Web
+抓取日: 2026-09-24 Asia/Shanghai
+
+README.md「License」:
+“Vision2Web is licensed under CC-BY-NC-SA-4.0 and is intended for academic research only.”
+
+README.md Step 4:
+“Functional testing: A Claude Code session drives the deployed app through each workflow with playwright-cli …”
+“Visual scoring: A VLM judge compares prototype images against actual page screenshots …”
+“Official leaderboard scores are evaluated by the maintainers using the latest VLM Judge and GUI Agent.”
+
+docker/Dockerfile.sandbox 首行: FROM ubuntu:22.04
+同一文件用 apt 安装 postgresql、redis-server、nginx，并用 npm 安装 @playwright/cli、@anthropic-ai/claude-code、@openai/codex，用 pip 安装 openhands。
+
+vision2web/core/sandbox.py 的 docker create 参数为 --name、--workdir、--rm，然后可选 -e 代理变量，镜像命令是 sleep infinity。这段没有 --gpus，也没有 --network none。

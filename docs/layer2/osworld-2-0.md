@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。`environment` 有两层：桌面虚拟机，以及按应用拆开的网站容器。`verifier` 把程序检查和 judge 混在同一总分里，judge 只覆盖少数检查点。
 
-10. 本地摘录。私有摘录未随公开手册发布。
+10. 本地摘录。[`notes/sources/osworld-2-0/MANIFEST.md`](../../notes/sources/osworld-2-0/MANIFEST.md)。

@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。`agent` 的 `network_mode` 是 `no-network`，`environment` 与 `verifier` 是 `public`。`verifier` 的权威分在另一份干净镜像上重跑，agent 阶段只留下 `model.patch`。`dataset` 在公开仓里是 `v2/tasks` 的 642 题；HF 另有 `hard` 51 与 `v1` 731。commercial 与 held-out 不在公开仓。任务容器没有 `gpus` 键，论文里的 8×H100 记在模型托管上。
 
-10. 本地摘录。私有摘录未随公开手册发布。
+10. 本地摘录。[`notes/sources/swe-bench-pro/MANIFEST.md`](../../notes/sources/swe-bench-pro/MANIFEST.md)。

@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。`environment` 绑在 Apptainer、指定型号的 GPU 和 HTCondor 上。`verifier` 要接下游分数、轨迹审查和程序化身份检查。`agent` 在容器里跑外部命令行工具，时限按小时计。
 
-10. 本地摘录。私有摘录未随公开手册发布。
+10. 本地摘录。[`notes/sources/posttrainbench-v1-1/MANIFEST.md`](../../notes/sources/posttrainbench-v1-1/MANIFEST.md)。

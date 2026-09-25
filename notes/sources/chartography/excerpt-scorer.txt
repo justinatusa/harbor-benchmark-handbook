@@ -1,0 +1,16 @@
+来源: https://github.com/surge-ai/chartography/blob/3f1bf837232d3918c2cc35c6e2418c9e70d2a57b/src/chartography/scorer.py
+抓取日: 2026-09-24 Asia/Shanghai
+
+文件首行: """Score responses against golden answers with a judge model."""
+
+JUDGE_PROMPT_TEMPLATE 开头要求只回 0 或 1：
+“The score must be either 0 or 1. Use "1" if the response matches all parts of the golden answer … Use "0" if any part of the response does not match the golden answer.”
+多部分答案写明 all-or-nothing。数值题若给出 acceptable range，落在闭区间内算对。
+
+同 SHA 的 src/chartography/task.py:
+DEFAULT_JUDGE_MODEL = "google/gemini-3.5-flash"
+Task(..., solver=generate(), scorer=golden_answer_scorer(judge_model=judge_model))
+
+同 SHA 的 README.md:
+“The scorer reports `accuracy/mean`: the fraction of responses whose final answer matches the golden answer, judged by one model-graded call per sample (the judge sees the question, golden answer, and response — never the chart).”
+Leaderboard Configuration 使用 --epochs 10 与 -T judge_model=google/gemini-3.5-flash。

@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。`environment` 是容器里的桌面虚拟机，观察靠截图，动作靠 `pyautogui`。`verifier` 读的是虚拟机终态。评测还可以同时开多台环境。
 
-10. 本地摘录。私有摘录未随公开手册发布。
+10. 本地摘录。[`notes/sources/osworld-verified/MANIFEST.md`](../../notes/sources/osworld-verified/MANIFEST.md)。

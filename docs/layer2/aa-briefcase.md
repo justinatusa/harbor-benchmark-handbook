@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。`dataset` 接不上正榜，题和评分表不公开。`verifier` 是三个模型抽样裁决，再拟合 Elo。`environment` 是没有出网的 E2B sandbox。`agent` 是 Stirrup 的代码执行循环。
 
-10. 本地摘录。私有摘录未随公开手册发布。
+10. 本地摘录。[`notes/sources/aa-briefcase/MANIFEST.md`](../../notes/sources/aa-briefcase/MANIFEST.md)。

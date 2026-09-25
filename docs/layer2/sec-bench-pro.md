@@ -40,4 +40,4 @@ task、environment、verifier、agent。每题一个容器。没有看到 `task.
 
 ## 本地摘录
 
-私有摘录未随公开手册发布。
+见 [`notes/sources/sec-bench-pro/MANIFEST.md`](../../notes/sources/sec-bench-pro/MANIFEST.md)。

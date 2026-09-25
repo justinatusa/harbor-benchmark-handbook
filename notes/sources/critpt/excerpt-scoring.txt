@@ -1,0 +1,12 @@
+来源: https://arxiv.org/abs/2509.26574 （v4，最后修订 2026-05-08）
+来源: https://github.com/CritPt-Benchmark/CritPt/blob/17c2545c302762d2f2d644d923ea4c301605cb08/src/critpt/critpt_generate.py
+来源: https://github.com/CritPt-Benchmark/CritPt/blob/17c2545c302762d2f2d644d923ea4c301605cb08/evaluate_all_results.py
+来源: https://artificialanalysis.ai/documentation （CritPt Benchmark Evaluation API）
+摘录日: 2026-09-24 Asia/Shanghai
+范围: 评分与运行时。不抄题面或答案。
+
+论文摘要写 CritPt 用 71 个复合研究挑战和从中拆出的 190 个 checkpoint，测未发表的研究级物理推理；答案按设计可机器核验，由针对物理输出格式定制的自动评分流程评。引言写最终答案先规范成结构化代码块，再用自定义脚本评数值、SymPy 符号式和带测试用例的 Python 函数，并计入专家给定的误差和等价形式。同一段把这套流程和 LLM judge 对照，理由是 LLM judge 在超出自身能力的内容上不可靠。70 道测试题的解答保持私有。公开仓提供在线评分服务器的客户端。
+
+公开仓 src/critpt/critpt_generate.py 用 inspect_ai。generation_only_scorer 的文档写它保存提交，而不是在本地评测；evaluate_online 为真时才发给评分服务器。Task 的 sandbox 参数是 "local"。use_python 时挂 bash 和 python 工具，use_web_search 时挂 web_search("openai")。evaluate_all_results.py 的默认 --server-url 是 https://artificialanalysis.ai/api/v2/critpt/evaluate。
+
+AA 文档写该接口评的是私有评测集，需要获批的 API key，默认 24 小时 10 次，成功响应给 accuracy、timeout_rate、server_timeout_count、judge_error_count。文档把 judge_error_count 解释成评分进程失败，可因模型回复或间歇错误，可重试。公开仓没有这套自定义脚本的实现。HF 卡片指向的 CritPt-Benchmark/CritPt_Eval 本次 API 返回 404。

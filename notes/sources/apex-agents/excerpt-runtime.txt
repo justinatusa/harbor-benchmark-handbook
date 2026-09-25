@@ -1,0 +1,7 @@
+来源：https://huggingface.co/datasets/mercor/apex-agents 卡片，以及 https://arxiv.org/abs/2601.14242 。抓取日 2026-09-24 Asia/Shanghai。
+
+卡片：APEX–Agents 评测 agent 能否执行长程、跨应用的专业服务任务。任务由投行分析师、管理顾问和公司律师编写。480 个任务，33 个 world。Rubric 是二元标准，平均每题约 4 条。Web search is disabled to keep evaluations reproducible。A judge model grades each criterion independently, using the prompt, the agent output, and relevant artifacts/changes.
+
+论文：三个组件是 Environment（容器里的 MCP gateway）、Agents runner（本基准用 ReAct toolbelt）、Grading（对比 world 快照前后，用 verifiers）。All three components are Docker containers that can run on any orchestration platform (e.g., Kubernetes, Modal). Web search is turned off for the benchmark to keep evaluations reproducible.
+
+运行代码仓：https://github.com/Mercor-Intelligence/archipelago ，commit 942d4bc6ba8ca788aac75a4a96a3c06e590b342a 。`environment/Dockerfile` 第一行是 `FROM debian:trixie-slim`。`environment/docker-compose.yml` 只定义一个 `environment` 服务。`grading/README.md` 的示例配置含 `llm_judge_model`。agents、environment、grading 三个目录都有 `.dockerignore`。

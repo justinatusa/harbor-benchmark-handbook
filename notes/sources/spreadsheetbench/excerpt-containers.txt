@@ -1,0 +1,17 @@
+# Excerpt. Not a clone.
+# Source commit 49b73a94775fb489063f60ca1865e3a650079a79
+# code_exec_docker/Dockerfile.api
+#   FROM python:3.9
+#   pip install tornado docker kubernetes
+# code_exec_docker/Dockerfile.executor
+#   FROM quay.io/jupyter/datascience-notebook:2023-10-20
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+#   CMD jupyter kernelgateway --KernelGatewayApp.ip=0.0.0.0 --KernelGatewayApp.port=8888
+# code_exec_docker/api.py
+#   USE_KUBERNETES=1 selects JupyterGatewayKubernetes, otherwise JupyterGatewayDocker
+#   Docker image: docker.io/xingyaoww/codeact-executor
+#   Docker limits: mem_limit 8g, nano_cpus 2 cores; no GPU device request; no network_mode
+#   Kubernetes: namespace env KUBERNETES_NAMESPACE default codeact-chat-ui
+#   Kubernetes limits: memory 512Mi, cpu 1; no GPU in the shown constraints
+# evaluation/scripts/evaluation.sh is local python, not the containers:
+#   python evaluation.py --setting single --model MODEL

@@ -1,0 +1,13 @@
+来源: https://github.com/SEC-bench/SEC-bench-Pro/blob/da80928ee20dc417ca6a068a1213e1d9d279df20/README.md
+来源: https://github.com/SEC-bench/SEC-bench-Pro/blob/da80928ee20dc417ca6a068a1213e1d9d279df20/harness/README.md
+来源: https://arxiv.org/abs/2605.26548 （v2，2026-07-20）
+摘录日: 2026-09-24 Asia/Shanghai
+范围: 只留测什么、环境和评分。不抄 PoC、prompt 或复现命令。
+
+README 写当前集合是 344 个已核实例，覆盖 Chromium V8、Mozilla SpiderMonkey 和 Linux kernel。每例带 meta.json、复现材料、Docker 构建文件和验证日志。前提是 Docker、Python 3.11+、uv。Linux 评测另要 x86-64 Linux 主机，特权容器能读写 /dev/kvm；文档写明不用 QEMU TCG 当等价评分模式。
+
+harness/README.md 写评测分两段：先在每题 Docker 容器里跑 Claude Code、Codex 或 OpenCode，再由 grade.py 评分。示例配置的 per-instance timeout 是 5400 秒。示例配置把 agent 侧网络收紧：Codex 的 network_access = false 且 web_search = disabled；Claude 要求 sandbox.network.deniedDomains = ["*"]；OpenCode 的 Bash 走无能力的网络命名空间，模型客户端仍可访问 provider API。Linux 通过 mcps/linux 的 secb-linux-vm-mcp，在 agent 命令沙箱外启动，以便 QEMU 用宿主机 KVM。
+
+同一 README 写 judge 凭据顺序：Bedrock 默认模型 us.anthropic.claude-sonnet-4-6；Anthropic 直连默认 claude-sonnet-4-6；OpenAI 回退默认 gpt-5.4。harness/GRADING.md 写 V8/SpiderMonkey 是分镜像执行判定加 source review，Linux 是 vulnerable/fixed/latest 合并判定；退出码门限在 harness 里，归因交给模型。
+
+论文摘要写：用已披露报告复现可工作的 PoC 输入，来测前沿模型找真实漏洞的能力；并写现有规则评分不够，因此提出 LLM-based judge。实例数同样是 344，目标是 V8、SpiderMonkey 和 Linux kernel。

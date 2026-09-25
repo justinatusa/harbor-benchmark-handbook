@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。`environment` 把代码执行放在两个镜像里，公式重算放在宿主机的 LibreOffice。`verifier` 的规则是单元格相等，但该 commit 里写入比较的路径指向输入表。
 
-10. 本地摘录。私有摘录未随公开手册发布。
+10. 本地摘录。[`notes/sources/spreadsheetbench/MANIFEST.md`](../../notes/sources/spreadsheetbench/MANIFEST.md)。

@@ -1,0 +1,26 @@
+# 摘自 https://github.com/rdi-berkeley/agents-last-exam
+# commit d10fb61a14f9719774c3520c5763068b28ef5546
+# 路径 configs/environments/docker.yaml
+# Docker provider for the cpu-free-ubuntu (Linux, no-GPU, no-license) tasks —
+# boots the published `agentslastexam/ale-ubuntu22-docker:latest` image as a
+# local container instead of one GCE VM per task.
+#
+# Per-task cpus/memory are derived from the task card's GCE machine type by the
+# provider (c4-standard-4 -> 4 CPU / 15g, etc.); `resolution` sets the Xvfb size.
+#
+# This profile intentionally stays a simple rootless-Docker path. Four tasks
+# require Docker inside the sandbox, and two more require Apptainer/Singularity;
+# use the QEMU/KVM provider for those tasks so the nested runtime executes inside
+# a complete Ubuntu guest. Opt-in DinD hooks remain available for custom
+# development setups through `enable_dind: true` + `privileged: true`, but they
+# are outside the supported `docker_support.txt` profile.
+snapshots:
+  cpu-free-ubuntu:
+    provider: docker
+    image: ale-ubuntu22-docker     # -> agentslastexam/ale-ubuntu22-docker:latest (from the Image registry; pulls from Hub if absent)
+    docker:
+      shm_size: 2g
+      resolution: [1024, 768]
+task_data_source: local:task-data
+output_path: null
+gcs_sa_key: secret/gcp_key.json

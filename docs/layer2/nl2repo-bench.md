@@ -40,4 +40,4 @@ task、environment、verifier、agent、dataset。项目页仓 `test_files/` 有
 
 ## 本地摘录
 
-私有摘录未随公开手册发布。
+见 [`notes/sources/nl2repo-bench/MANIFEST.md`](../../notes/sources/nl2repo-bench/MANIFEST.md)。

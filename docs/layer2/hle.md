@@ -20,4 +20,4 @@ GitHub 仓放评测脚本。题目在 Hugging Face `cais/hle`，要先同意门�
 
 9. 对抽象的压力。`verifier` 由另一个模型判断对错，数值题还允许误差。`dataset` 带图像，而且不能公开再分发。带工具时 `agent` 在外部命令行里。
 
-10. 本地摘录。私有摘录未随公开手册发布。
+10. 本地摘录。[`notes/sources/hle/MANIFEST.md`](../../notes/sources/hle/MANIFEST.md)。

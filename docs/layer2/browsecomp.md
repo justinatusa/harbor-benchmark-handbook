@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。`verifier` 的 reward 来自另一个模型的 yes/no。`agent` 的浏览回路没有落在这个仓库里。`dataset` 是加密表格，单元格明文未随材料落盘。
 
-10. 本地摘录。私有摘录未随公开手册发布。
+10. 本地摘录。[`notes/sources/browsecomp/MANIFEST.md`](../../notes/sources/browsecomp/MANIFEST.md)。

@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。`dataset` 没有 `dataset.toml`。`environment` 没有镜像。Qwen-VL 脚本走 API。
 
-10. 本地摘录。私有摘录未随公开手册发布。
+10. 本地摘录。[`notes/sources/mathvision/MANIFEST.md`](../../notes/sources/mathvision/MANIFEST.md)。

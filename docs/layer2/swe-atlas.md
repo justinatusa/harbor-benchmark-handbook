@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。`verifier` 要同时接程序检查和必须通过的模型 rubric。`dataset` 在前两轨有 `dataset.toml`，Refactoring 没有。`environment` 是单份 Dockerfile，沙箱类型是 Modal，Refactoring 还打开 `modal_vm_runtime`。`agent` 的回路在 Harbor 进程里。
 
-10. 本地摘录。私有摘录未随公开手册发布。
+10. 本地摘录。[`notes/sources/swe-atlas/MANIFEST.md`](../../notes/sources/swe-atlas/MANIFEST.md)。

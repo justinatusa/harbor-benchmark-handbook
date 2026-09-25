@@ -1,0 +1,11 @@
+来源：https://aclanthology.org/2026.findings-acl.1197/ 摘要页，抓取日 2026-09-24 Asia/Shanghai。
+
+We introduce AnalystBench, a continually extensible benchmark of 20 real-world report generation tasks grounded in multimodal document collections, where models must process millions of input tokens to produce long-form professional reports. Using expert-validated quality checklists and groundedness evaluation, we evaluate LLMs and coding agents.
+
+来源：https://aclanthology.org/2026.findings-acl.1197.pdf 第 4.1 节 Scoring。PDF 文本抽取有断行，下面按句子还原。
+
+Each generated report is evaluated by GPT-5.1, which assigns a 1-5 score for every criterion using explicit scoring guidelines.
+
+同文第 4.3 节：图表按 caption 相似度配对后，由 GPT-5.1 对 readability、groundedness、utility、reproducibility 打分。同文第 2.3 节：把参考报告拆成可核验 claim 后，用 GPT-5 判断是否被源文档支持。
+
+同文 Ethical considerations：只发布 source URLs 和 reconstruction scripts，不发布抓下来的文档正文。仅含美国政府域名的任务称将立即提供；其余 URL 与重建脚本要等法律审查后再发。评测设置的脚注写明关闭 web search，源文档在本地提供。正文写 coding agent 用的是 OpenHands。

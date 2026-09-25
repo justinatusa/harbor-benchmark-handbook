@@ -18,6 +18,8 @@
 
 `programbench`、`omnidocbench`、`benchcad` 都没有 Harbor task 目录，距离是重改造。`mmmu-pro`、`mathvision`、`video-mme`、`automationbench`、`nl2repo-bench` 同样没有 task 目录，评测脚本没有写明必须显卡，距离也是重改造。
 
+没有介绍卡的 slug 仍以本表和 `docs/registry.md` 定距离。深挖打开 [`docs/layer2/README.md`](layer2/README.md) 里的 `notes/sources/<slug>/MANIFEST.md`。介绍卡没有覆盖全部 52 行。
+
 
 ## 距离一览
 

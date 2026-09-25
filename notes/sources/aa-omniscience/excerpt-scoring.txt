@@ -1,0 +1,9 @@
+来源: https://arxiv.org/abs/2511.13029 （v1，2025-11-17）
+来源: https://huggingface.co/datasets/ArtificialAnalysis/AA-Omniscience-Public/blob/e4883edbb9f5ccf2b2a8fdc6fb65e01a58e99849/README.md
+来源: https://artificialanalysis.ai/evaluations/omniscience
+摘录日: 2026-09-24 Asia/Shanghai
+范围: 测什么和评分。不抄题库。
+
+论文摘要写 AA-Omniscience 用 6,000 题测事实回忆和知识校准，覆盖 6 个域、42 个题目。Omniscience Index 范围是 -100 到 100，答错受罚，不确定时弃答不受罚，0 表示答对与答错一样多。第 2.4.1 节公式是 OI = 100 * (c - i) / (c + p + i + a)，c 正确，p 部分正确，i 错误，a 弃答。第 2.3 节写用另一个评分模型把回答分成 correct、partially correct、incorrect、not answered；选定的评分模型是 Google Gemini 2.5 Flash Preview (09-2025) with reasoning。评测给模型的是无上下文、无工具的事实回忆。
+
+HF README 写公开集是全量的 10%，600 题，用来看总体指数，不适合当域或题目级结论。本次下载的 CSV 为 154,615 字节、601 行（含表头），列是 domain,topic,subtopic,question_id,question,answer。CSV 和 3,847,115 字节的论文 PDF 没有放进本目录。

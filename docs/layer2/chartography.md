@@ -40,4 +40,4 @@ task、dataset、verifier。代码在 `src/chartography/`，运行时是 Inspect
 
 ## 本地摘录
 
-私有摘录未随公开手册发布。
+见 [`notes/sources/chartography/MANIFEST.md`](../../notes/sources/chartography/MANIFEST.md)。

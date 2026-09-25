@@ -40,4 +40,4 @@ dataset、verifier、agent。生成走 inspect-ai。没有 `task.toml` 或 `data
 
 ## 本地摘录
 
-私有摘录未随公开手册发布。
+见 [`notes/sources/critpt/MANIFEST.md`](../../notes/sources/critpt/MANIFEST.md)。

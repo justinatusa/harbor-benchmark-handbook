@@ -1,0 +1,15 @@
+来源：https://huggingface.co/datasets/perplexity-ai/draco
+HF 修订：ce076749809027649ebd331bcb70f42bf720d387
+抓取日：2026-09-24 Asia/Shanghai
+只摘数据集卡的评分协议，不含 test.jsonl 题面。
+
+Responses are evaluated using an LLM-as-a-judge protocol. For each criterion in a task's rubric, the judge model receives the original query, the system's response, and a single criterion, then produces a binary verdict (MET or UNMET) with a brief justification.
+
+Positive criteria (positive weight): MET means the response satisfies the requirement.
+Negative criteria (negative weight): MET means the response contains the error.
+
+raw_score = sum(v_i * w_i for all i)
+normalized_score = clamp(raw_score / sum(w_i for all i where w_i > 0), 0, 1) * 100%
+
+数据集卡写：可复现评测要用能力足够的 judge，并降低 temperature；评分提示词见论文。
+论文 arXiv:2602.11685 第 5 节写主 judge 是 Gemini-3-Pro，附录 D 还报了 GPT-5.2 与 Sonnet-4.5。

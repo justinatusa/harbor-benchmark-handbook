@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。压力在 `environment`。任务容器之外还要一组本地应用容器。`verifier` 是每题一份脚本，108 份没读完。`agent` 回路在本仓的 openai-agents 脚手架里。
 
-10. 本地摘录。私有摘录未随公开手册发布。
+10. 本地摘录。[`notes/sources/toolathlon-verified/MANIFEST.md`](../../notes/sources/toolathlon-verified/MANIFEST.md)。

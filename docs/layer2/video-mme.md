@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。压力在 `dataset` 和 `verifier`。题面是视频包加选择题，计分脚本抽字母。`agent` 和 `environment` 没有材料。评测脚本没有写明必须显卡。
 
-10. 本地摘录。私有摘录未随公开手册发布。
+10. 本地摘录。[`notes/sources/video-mme/MANIFEST.md`](../../notes/sources/video-mme/MANIFEST.md)。

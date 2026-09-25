@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。`environment` 的网络分成两层：`task.toml` 写 `no-network`，榜上的 agent 出网走 Pier 白名单。`verifier` 用 `environment_mode = "separate"`，并用 `[[verifier.collect]]` 收 `model.patch`，再在干净容器里评分。`agent` 的榜上回路在 Pier 里，示例 agent 是 `mini-swe-agent`。`dataset` 的运行入口是目录 `deep-swe/tasks`；清单没有写出 `dataset.toml` 路径。
 
-10. 本地摘录。私有摘录未随公开手册发布。
+10. 本地摘录。[`notes/sources/deepswe-v1-1/MANIFEST.md`](../../notes/sources/deepswe-v1-1/MANIFEST.md)。

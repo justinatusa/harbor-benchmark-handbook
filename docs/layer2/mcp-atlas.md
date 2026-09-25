@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。`environment` 要求同一任务的工具调用固定在同一个沙箱，`agent` 循环在宿主机进程里。`verifier` 由另一个模型给 claim 打覆盖率，有两档通过率。
 
-10. 本地摘录。私有摘录未随公开手册发布。
+10. 本地摘录。[`notes/sources/mcp-atlas/MANIFEST.md`](../../notes/sources/mcp-atlas/MANIFEST.md)。

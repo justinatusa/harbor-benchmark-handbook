@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。压力在 `verifier`。胜负来自模型盲评，程序再把胜负拟合成分数。`environment` 的镜像构建文件没有公开。`agent` 指定了 Stirrup，该仓没有 gdpval 任务循环。
 
-10. 本地摘录。私有摘录未随公开手册发布。
+10. 本地摘录。[`notes/sources/gdpval-aa-v2-1/MANIFEST.md`](../../notes/sources/gdpval-aa-v2-1/MANIFEST.md)。

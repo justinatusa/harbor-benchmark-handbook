@@ -1,0 +1,22 @@
+来源：Proximal-Labs/frontier-swe main 422b9bb95deb8efe436becb0ed3c44be23611e10
+抓取：2026-09-24。只记录 tasks/*/task.toml 的环境字段，不包含镜像层。
+
+allow_internet=true:
+  frogsgame-rl (gpus=0, 注释写推理走 Tinker API)
+  pcqm4mv2-autoresearch (gpus=1, gpu_types=["H100"])
+
+gpus=1:
+  granite-mamba2-inference-optimization gpu_types=["B200"] allow_internet=false
+  inference-system-optimization gpu_types=["B200"] allow_internet=false
+  modular-stack-wan21 gpu_types=["H100"] allow_internet=false
+  optimizer-design gpu_types=["H100"] allow_internet=false
+  pcqm4mv2-autoresearch gpu_types=["H100"] allow_internet=true
+
+其余 12 题 gpus=0 且 allow_internet=false:
+  cranelift-codegen-opt, dart-style-haskell, dependent-type-checker,
+  ffmpeg-swscale-rewrite, git-to-zig, libexpat-to-x86asm, lua-native-compiler,
+  notebook-compression, postgres-sqlite-wire-adapter,
+  pyright-type-checking-optimization, revideo-perf-opt, frogsgame-rl
+
+scripts/score_from_reward.py 的 ALL_TASKS 只有这 17 个名字。
+SCORING.md 写 post-hoc audit 看 scoring/anticheat.json；该路径不在这个 commit 的树里。

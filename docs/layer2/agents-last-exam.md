@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。压力在 `environment` 和 `verifier`。环境要键鼠和桌面，部分题要 GPU。`verifier` 主路径是程序分，6.8% 要在评分里再调模型。`agent` 回路有的在沙箱里，有的在外面。
 
-10. 本地摘录。私有摘录未随公开手册发布。
+10. 本地摘录。[`notes/sources/agents-last-exam/MANIFEST.md`](../../notes/sources/agents-last-exam/MANIFEST.md)。

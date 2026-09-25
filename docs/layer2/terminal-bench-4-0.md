@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。`environment` 要同时接 separate verifier 容器、11 题的 compose 多服务，以及 3 题的 H100。8 题缺 `gpus`，64 题缺 `allow_internet`，清单写明不能从缺键推出运行时默认值。`verifier` 固定 `environment_mode = "separate"`。`agent` 超时是 8 小时，示例跑在 Modal。`dataset` 用 Hub 上的 `terminal-bench/terminal-bench@4.0.0`。清单没有给出该 tag 的 `dataset.toml` 路径。
 
-10. 本地摘录。私有摘录未随公开手册发布。
+10. 本地摘录。[`notes/sources/terminal-bench-4-0/MANIFEST.md`](../../notes/sources/terminal-bench-4-0/MANIFEST.md)。

@@ -61,4 +61,4 @@ GitHub tag `v0.23.0` 指向 commit `1e5c5c6db929a10a140d05e606882c671ae20729`。
 
 ## 名单
 
-权威名单：`prompts/bench-list.md`（52 个 slug）。Registry 行使用表里的 slug。私有摘录未随公开手册发布。
+权威名单：`prompts/bench-list.md`（52 个 slug）。Registry 行使用表里的 slug。摘录在 `notes/sources/<slug>/`。

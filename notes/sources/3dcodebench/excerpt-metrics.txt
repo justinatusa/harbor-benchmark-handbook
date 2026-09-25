@@ -1,0 +1,21 @@
+来源 SHA: 42c7780ed3fcbd466f17f058f62e7996233777f7
+仓库: https://github.com/gaoypeng/3dcodebench
+项目站: https://www.3dcodebench.com/ （页内链到上述仓库）
+抓取日: 2026-09-24 Asia/Shanghai
+
+README.md:
+“3DCodeBench measures how well frontier models can write Blender 5.0 Python that procedurally builds a specific 3D object.”
+评分列出 executability、SigLIP-2 / DINOv3、Chamfer / Uni3D、LLM-as-judge。
+“Blender 5.0 must be installed separately.”
+
+metrics/README.md 表:
+executability.py / shape_chamfer.py：GPU? no
+image_similarity.py / shape_uni3d.py：GPU? yes
+llm_judge/：GPU? no，需要 provider API key
+文末写 scripts/aggregate.py “lives outside this repo for now”。
+
+metrics/llm_judge/README.md:
+“Uses a strong LLM (Gemini 3 Pro by default).”
+
+tasks/coding_agent/README.md 的 CLI: claude、codex、gemini、agy。
+tasks/multi_turn/README.md: 最多 T=3，每次是新的 API 调用，只含上一份代码和 traceback。

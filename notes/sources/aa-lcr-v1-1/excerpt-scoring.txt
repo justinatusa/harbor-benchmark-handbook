@@ -1,0 +1,9 @@
+来源: https://huggingface.co/datasets/ArtificialAnalysis/AA-LCR/blob/9a77ef56b717057ade24ceab4d273712a0b4f19e/README.md
+来源: https://artificialanalysis.ai/evaluations/artificial-analysis-long-context-reasoning
+来源: https://artificialanalysis.ai/articles/announcing-aa-lcr
+摘录日: 2026-09-24 Asia/Shanghai
+范围: 版本和评分。不抄文档正文或答案。
+
+HF README 在 commit 9a77ef56 写 AA-LCR 有 100 道题，文档集平均约 10 万 token，答案不能从单处直接抄出，要跨多份材料推理。v1.1（README 标 September 2026）改了 16 个答案键，并给等价判断加了 system prompt；题目和文档集不变。v1.0.0 仍在 revision bdae010bbce259820c0e34c1d7cce210d966fb75。v1.0.0 的分数不能和 v1.1 直接比。
+
+同一 README 写用 LLM 等价判断器。从 v1.1 起，判断器是 GPT-5.6 Luna (medium)，输出 JSON，verdict 为 CORRECT 或 INCORRECT。榜单页写：开放答案按 pass/fail，另一模型判定与官方答案等价才得分，AA-LCR 分数是通过率平均。token 计数用 tiktoken 的 cl100k_base。文档文本在 extracted_text/AA-LCR_extracted-text.zip，API 记录 4,023,468 字节，本次没有下载。CSV 为 145,408 字节、101 行（含表头）。未见 arXiv id，也未见容器、GPU、Kubernetes 或多容器说明。

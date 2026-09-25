@@ -1,0 +1,9 @@
+来源：https://github.com/humanlaya/OneMillion-Bench
+commit eb1ad8061152ae6d05a2adcc3c0d983675da962c
+路径 src/omb/config/default.yaml
+只摘 judge 模型名。API key 字段是空占位，未抄入本文件。
+
+JUDGE_MODELS:
+  # NOTE: we recommend to use "google/gemini-3.1-pro-preview" instead of "google/gemini-3-pro-preview" here because google/gemini-3-pro-preview is no longer available. However, the judge of "google/gemini-3.1-pro-preview" may be much strict on scoring than "google/gemini-3-pro-preview", with about -5% to -6% degradation.
+  - "google/gemini-3.1-pro-preview"
+REASONING_EFFORT: "high"

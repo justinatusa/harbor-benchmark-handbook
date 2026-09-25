@@ -40,4 +40,4 @@ agent、environment、verifier、dataset。4.0 页没有公开 task 目录。没
 
 ## 本地摘录
 
-私有摘录未随公开手册发布。
+见 [`notes/sources/cursorbench/MANIFEST.md`](../../notes/sources/cursorbench/MANIFEST.md)。

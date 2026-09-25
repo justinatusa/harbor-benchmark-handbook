@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。压力在 `dataset` 和 `environment`。三套配置在 Hugging Face，没有 `dataset.toml`，也没有镜像。`agent` 是一次模型调用。
 
-10. 本地摘录。私有摘录未随公开手册发布。
+10. 本地摘录。[`notes/sources/mmmu-pro/MANIFEST.md`](../../notes/sources/mmmu-pro/MANIFEST.md)。

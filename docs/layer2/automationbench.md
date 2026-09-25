@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。压力在 `environment`。47 个应用的状态在进程里，公开树没有镜像，也不是多容器。接入要新写 task 目录。`agent` 回路在 `auto-bench`。
 
-10. 本地摘录。私有摘录未随公开手册发布。
+10. 本地摘录。[`notes/sources/automationbench/MANIFEST.md`](../../notes/sources/automationbench/MANIFEST.md)。

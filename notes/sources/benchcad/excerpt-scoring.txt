@@ -1,0 +1,17 @@
+来源 SHA: 52087ef4b08811c21c09b8b16d0ae36c70844865
+仓库: https://github.com/BenchCAD/BenchCAD-main
+抓取日: 2026-09-24 Asia/Shanghai
+
+README.md:
+“Scoring is execution-grounded and deterministic — there is no LLM judge.”
+Vision2Code: voxel IoU vs ground-truth STEP
+CodeEdit: normalized IoU (improvement over baseline)
+Vision-QA / Code-QA: symmetric ratio accuracy
+
+CITATION.cff abstract 同样写 voxel IoU 与 symmetric ratio accuracy，“with no LLM judge in the loop.”
+
+environments/benchcad-vision2code/README.md:
+“Reward = voxel IoU … on a normalized 64³ grid. … there is no judge model. Non-executable outputs score 0.”
+用法: uv run vf-eval benchcad-vision2code
+
+environments/benchcad-qa/pyproject.toml dependencies 含 verifiers>=0.1.6、datasets、pillow。该环境 README 写不执行 CAD。

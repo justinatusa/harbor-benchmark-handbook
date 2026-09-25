@@ -20,4 +20,4 @@ Lite 是全量 140 题里的 30 题子集。清单写这些 Harbor 目录在 0.6
 
 9. 对抽象的压力。`environment` 要显卡，并且 `task.toml` 允许出网。`verifier` 把程序算出的分数写入 reward 文件。`dataset` 没有单独的 Lite 名单，Lite 用 `harbor/run-modal-lite.yaml` 与 `harbor/run-daytona-lite.yaml` 的 `task_names`。`agent` 可以走仓内循环，也可以走 Harbor 的 agent。
 
-10. 本地摘录。私有摘录未随公开手册发布。
+10. 本地摘录。[`notes/sources/mls-bench-lite/MANIFEST.md`](../../notes/sources/mls-bench-lite/MANIFEST.md)。

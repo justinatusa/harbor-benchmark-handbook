@@ -40,4 +40,4 @@ v2 说明页写默认回路是 Proximus。文中说它在 mini-swe-agent 上加�
 
 ## 本地摘录
 
-私有摘录未随公开手册发布。
+见 [`notes/sources/frontierswe-v2/MANIFEST.md`](../../notes/sources/frontierswe-v2/MANIFEST.md)。

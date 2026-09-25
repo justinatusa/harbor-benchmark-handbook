@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。压力在 `environment` 和 `agent`。推理容器必须断网，评测机却要拉镜像和测试。`agent` 基线不在本仓。`verifier` 要跑整包行为测试。`dataset` 没有 `dataset.toml`。
 
-10. 本地摘录。私有摘录未随公开手册发布。
+10. 本地摘录。[`notes/sources/programbench/MANIFEST.md`](../../notes/sources/programbench/MANIFEST.md)。

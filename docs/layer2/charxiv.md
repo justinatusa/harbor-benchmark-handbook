@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。`verifier` 绑在 `gpt-4o-2024-05-13` 上。`dataset` 的图不在 git commit 里，test 答案是 null。现有生成入口是一次 `generate_response`，没有代理循环可以接到 `agent`。
 
-10. 本地摘录。私有摘录未随公开手册发布。
+10. 本地摘录。[`notes/sources/charxiv/MANIFEST.md`](../../notes/sources/charxiv/MANIFEST.md)。

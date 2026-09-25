@@ -20,4 +20,4 @@
 
 9. 对抽象的压力。`verifier` 要同时容纳单元格的程序比较，和可视化的模型打分。`environment` 在可视化导出这一步要离开 Linux 容器，改到 Windows 上的 Excel 或 WPS。`agent` 是仓内 SWE-agent 的单工具循环。
 
-10. 本地摘录。私有摘录未随公开手册发布。
+10. 本地摘录。[`notes/sources/spreadsheetbench-2/MANIFEST.md`](../../notes/sources/spreadsheetbench-2/MANIFEST.md)。

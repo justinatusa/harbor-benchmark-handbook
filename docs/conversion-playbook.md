@@ -1,6 +1,6 @@
 # 转化路径
 
-按依赖写检查清单。例子只覆盖 8 个 slug，出现在例子里不等于距离档。核对上游文件时打开公开仓的钉死 commit，不要到本手册仓库里找私有摘录。文件对不上就停。
+按依赖写检查清单。例子只覆盖 8 个 slug，出现在例子里不等于距离档。核对上游文件时打开公开仓的钉死 commit。本手册里的摘录在 `notes/sources/`。文件对不上就停。这份清单不是端到端可照做的完整评测。
 
 任务公开、且不是 gated 的节，要交出 Harbor 的 task 目录：`instruction.md`、`environment/`、与操作系统匹配的评分脚本（`tests/test.sh` 或 `tests/test.bat`）。评分脚本最后要写出 reward 文件：`/logs/verifier/reward.txt` 或 `/logs/verifier/reward.json`。两份都在时，Harbor 先读 `reward.json`。任务不公开或 gated 的节不要求 `tests/test.sh`，也不要求 `tests/test.bat`。
 

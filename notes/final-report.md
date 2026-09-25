@@ -51,7 +51,7 @@ dc012c2 Add source manifests for the chart and code set and the knowledge-work s
 
 - Harbor 版本是 0.23.0。
 - 52 个 slug 都有 MANIFEST。
-- 介绍卡 30 张。数的是 `docs/layer2/*.md`。`.gitkeep` 不算。
+- 介绍卡 52 张。数的是 `docs/layer2/*.md`，不含 `README.md`。距离以 `docs/registry.md` 为准。
 - A1 17 条都有回应。
 - A2 21 条都有回应。
 - R3 抽了 20 个入口。`browsecomp` 为 403。

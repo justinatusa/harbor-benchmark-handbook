@@ -1,8 +1,8 @@
 # MANIFEST
 
-范围: 手册全树。含 docs/、notes/、prompts/。
+范围: 手册全树（公开即完全态）。含 docs/、notes/、prompts/。
 排除: 文件名含 BACKGROUND 的背景说明，以及密钥、凭证、私信。
-docs/done-when.md 是检查清单，不是收工宣告。
+docs/done-when.md 是检查清单，不是收工宣告；不进主阅读顺序。
 
 ## 文件
 

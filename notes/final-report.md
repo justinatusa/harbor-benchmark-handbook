@@ -1,6 +1,6 @@
 # 未完成说明
 
-2026-09-25 以后的距离与读者路径以 `docs/` 为准。下面的「未核实」名单写于更早的 tip，其中 `unknown` 与轻适配已经改过。是否把转化路径再收成 skills：不写 skills 正文。现有 `docs/conversion-playbook.md` 已按依赖分节。
+本文是过程记录。距离与终报里的旧数字对不上时，以 `docs/registry.md` 为准。2026-09-25 以后的读者路径以 `docs/` 为准。下面的「未核实」名单写于更早的 tip，其中 `unknown` 与轻适配已经改过。是否把转化路径再收成 skills：不写 skills 正文。现有 `docs/conversion-playbook.md` 已按依赖分节。
 
 
 

@@ -4,7 +4,7 @@
 
 不要提交 API Key。不含 `prompts/harbor-unified-abstraction-BACKGROUND.md`。
 
-距离列里没有 `unknown`，不等于这些题都能接。转化路径不是端到端可照做的完整评测。`docs/done-when.md` 是检查清单，不是收工宣告。浏览没有单独落成一层。
+距离列里没有 `unknown`，不等于这些题都能接。转化路径不是端到端可照做的完整评测。浏览没有单独落成一层。
 
 ## 阅读顺序
 
@@ -14,9 +14,12 @@
 4. [Registry](docs/registry.md)
 5. [转化路径](docs/conversion-playbook.md)
 6. 核对单题、冲突或版本时，打开 [介绍卡索引](docs/layer2/README.md)、[冲突](docs/conflicts.md)、[来源](docs/sources.md)
-7. 深挖摘录、轮次和审查：[`notes/sources/`](notes/sources/)、[`notes/final-report.md`](notes/final-report.md)、[`notes/rounds/`](notes/rounds/)、[`notes/adversarial/`](notes/adversarial/)
-8. [检查清单](docs/done-when.md)（不是收工宣告）
-9. 名单与调研合同：[bench-list](prompts/bench-list.md)、[统一调研提示词](prompts/harbor-unified-abstraction-research.md)
+7. 深挖摘录、轮次和审查：[`notes/sources/`](notes/sources/)、[`notes/rounds/`](notes/rounds/)、[`notes/adversarial/`](notes/adversarial/)。[`notes/final-report.md`](notes/final-report.md) 是过程记录。距离与终报里的旧数字对不上时，以 `docs/registry.md` 为准。
+8. 名单与调研合同：[bench-list](prompts/bench-list.md)、[统一调研提示词](prompts/harbor-unified-abstraction-research.md)
+
+## 过程
+
+[`docs/done-when.md`](docs/done-when.md) 留在仓里，是检查清单，不是收工宣告，也不进上面的阅读顺序。过程勾选原文在 [`notes/done-when.md`](notes/done-when.md)。
 
 层只有三层。task 层是 instruction、environment、verifier。运行层是 agent、trial、job，由 metric 汇总。接入层是 adapter 生成目录、dataset 列出任务。与 Harbor 的距离只取原生可接、轻适配、重改造、暂不宜接；没有证据时写 unknown。
 

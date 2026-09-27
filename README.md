@@ -16,6 +16,7 @@
 6. 核对单题、冲突或版本时，打开 [介绍卡索引](docs/layer2/README.md)、[冲突](docs/conflicts.md)、[来源](docs/sources.md)
 7. 深挖摘录、轮次和审查：[`notes/sources/`](notes/sources/)、[`notes/rounds/`](notes/rounds/)、[`notes/adversarial/`](notes/adversarial/)。[`notes/final-report.md`](notes/final-report.md) 是过程记录。距离与终报里的旧数字对不上时，以 `docs/registry.md` 为准。
 8. 名单与调研合同：[bench-list](prompts/bench-list.md)、[统一调研提示词](prompts/harbor-unified-abstraction-research.md)
+9. MCP-Atlas 零背景说明书（可单独通读）：[docs/mcp-atlas-explainer/00-readme.md](docs/mcp-atlas-explainer/00-readme.md)
 
 ## 过程
 
